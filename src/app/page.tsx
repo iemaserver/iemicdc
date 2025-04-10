@@ -113,11 +113,17 @@ export default function Home() {
               Data Science & Emerging Technologies Expert
             </p>
           </div>
-          <div className=" col-span-2 flex flex-col items-center justify-start gap-3">
+          <div className="flex flex-col items-center justify-start gap-3">
             <Image src="/images/S5.png" width={200} height={200} alt="SP5" />
             <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
               Dr. Anbuthambi Bhojarajan <br /> currently holds the position of
               Head of Strategy, L&T EduTech, of Larsen & Toubro Ltd.
+            </p>
+          </div>
+          <div className="flex flex-col items-center justify-start gap-3">
+            <Image src="/images/S6.png" width={200} height={200} alt="SP5" />
+            <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
+            Dr. Treena Sircar Basu <br />Occidental College, Los Angeles, CA, primarily works on developing numerical solutions to fractional partial differential equations
             </p>
           </div>
         </div>

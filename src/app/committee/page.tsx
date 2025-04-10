@@ -26,7 +26,7 @@ export default async function Committee() {
   return (
     <Container className="flex flex-col items-center justify-start gap-6 animate-animate-appear">
       <div className="w-[80%]">
-        {Object.keys(data).map((key: string) => <CommitteeModule key={key} title={key} list={data[key]} />)}
+        {Object.keys(data.Committees).map((key: string) => <CommitteeModule key={key} title={key} list={data.Committees[key]} />)}
       </div>
     </Container>
   );

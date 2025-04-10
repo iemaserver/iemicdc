@@ -39,6 +39,10 @@ const pages = [
     name: "Venue",
     path: "/venue",
   },
+  {
+    name: "Awardees",
+    path: "/awardees",
+  }
 ];
 
 export const Header = () => {
