@@ -123,7 +123,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-start gap-3">
             <Image src="/images/S6.png" width={200} height={200} alt="SP5" />
             <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
-            Dr. Treena Sircar Basu <br />Occidental College, Los Angeles, CA, primarily works on developing numerical solutions to fractional partial differential equations
+            Prof. Treena Sircar Basu <br />Occidental College, Los Angeles, CA
             </p>
           </div>
         </div>
