@@ -13,6 +13,7 @@ import {
   ShieldHalf,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -123,7 +124,9 @@ export default function Home() {
           <div className="flex flex-col items-center justify-start gap-3">
             <Image src="/images/S6.png" width={200} height={200} alt="SP5" />
             <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
-            Prof. Treena Sircar Basu <br />Occidental College, Los Angeles, CA
+            Professor Treena Basu is an Associate Professor and former Head of the Department of Mathematics at Occidental College, Los Angeles
+            <br />
+            <Link href={"https://www.oxy.edu"} className="text-blue-500 hover:underline">https://www.oxy.edu</Link>
             </p>
           </div>
         </div>
