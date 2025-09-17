@@ -39,7 +39,7 @@ function calculateCardRotation({
 
 export default function GithubCardSkew({ className, children, onClick }: { className?: string, children: React.ReactNode, onClick: () => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const resetRef = useRef<NodeJS.Timeout>();
+  const resetRef = useRef<NodeJS.Timeout | null>(null);
 
   const update = useCallback(({ x, y }: { x: number; y: number }) => {
     if (!containerRef.current) {
@@ -59,7 +59,7 @@ export default function GithubCardSkew({ className, children, onClick }: { class
     containerRef.current.style.setProperty("--y", `${rotationY}deg`);
   }, []);
 
-  useMousePosition(containerRef, update);
+  useMousePosition(containerRef as React.RefObject<HTMLElement>, update);
 
   return (
     <div
@@ -84,7 +84,10 @@ export default function GithubCardSkew({ className, children, onClick }: { class
         }, 300);
       }}
       onMouseLeave={() => {
-        clearTimeout(resetRef.current);
+        if (resetRef.current) {
+          clearTimeout(resetRef.current);
+          resetRef.current = null;
+        }
         if (!containerRef.current) {
           return;
         }
