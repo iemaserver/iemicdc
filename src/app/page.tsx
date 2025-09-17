@@ -4,6 +4,7 @@ import Carousel from "@/components/Carousel";
 import { Container } from "@/components/Container";
 import { DataBox } from "@/components/DataBox";
 import { Separator } from "@/components/Separator";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import {
   Bot,
   CalendarCheck,
@@ -15,7 +16,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Card = ({
   track,
@@ -28,247 +29,450 @@ const Card = ({
 }) => {
   const router = useRouter();
   return (
-    <GithubCardShiny
+    <div
       onClick={() => router.push(`/papers#${id}`)}
-      className="md:w-[35%] w-[80%] h-[35vh] cursor-pointer px-0 py-2 bg-gray-100 text-primary shadow-sm"
+      className="group w-full cursor-pointer bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
     >
-      <div className="w-full h-full flex flex-col items-center justify-center gap-2 p-2">
-        {Avatar}
-        <h1 className="text-lg text-center h-[10vh] font-bold">{track}</h1>
+      <div className="w-full h-full flex flex-col items-center justify-center gap-6 p-8 relative">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-red-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        
+        {/* Icon Container */}
+        <div className="relative z-10 p-4 bg-gradient-to-br from-red-100 to-red-50 rounded-2xl group-hover:scale-110 transition-transform duration-300">
+          <div className="text-red-600 group-hover:text-red-700 transition-colors duration-300">
+            {Avatar}
+          </div>
+        </div>
+        
+        {/* Title */}
+        <h1 className="text-lg font-bold text-center text-gray-800 leading-tight group-hover:text-red-700 transition-colors duration-300 relative z-10">
+          {track}
+        </h1>
+        
+        {/* Decorative element */}
+        <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 relative z-10"></div>
       </div>
-    </GithubCardShiny>
+    </div>
   );
 };
 
 export default function Home() {
+  useScrollAnimation();
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const heroImages = ['/images/dp2.jpg', '/images/dp3.jpg', '/images/dp6.jpg'];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 4000); // Change image every 4 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <Container className=" flex flex-col items-center justify-start gap-10">
-      <Carousel />
+    <Container className="flex flex-col items-center justify-start gap-16 pb-8 min-h-screen fade-in max-w-full overflow-hidden">
+      {/* Hero Section with Image Carousel */}
+      <div className="relative w-full max-w-7xl rounded-3xl overflow-hidden shadow-2xl">
+        {/* Background Images */}
+        <div className="absolute inset-0 h-full">
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <Image
+                src={image}
+                alt={`Conference Image ${index + 1}`}
+                fill
+                className="object-cover"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+          
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
+        
+        {/* Content - Not absolutely positioned, flows naturally */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center py-12 md:py-16 lg:py-20 px-4 space-y-6 md:space-y-8">
+          <div className="space-y-4">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
+              IEM ICDC 2026
+            </h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="space-y-4 md:space-y-6 max-w-4xl">
+            <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
+              International Conference on Computational Intelligence, Data Science and Cloud Computing
+            </h2>
+            
+            <div className="inline-block bg-gradient-to-r from-red-500 to-red-600 px-4 md:px-6 py-2 rounded-full drop-shadow-lg">
+              <span className="text-white font-semibold text-sm md:text-base">FOURTH EDITION</span>
+            </div>
+            
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 leading-relaxed max-w-3xl mx-auto drop-shadow-lg" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.7)'}}>
+              Join leading researchers, industry experts, and innovators in exploring the latest advances in 
+              Computational Intelligence, Data Science, and Cloud Computing at Institute of Engineering & Management.
+            </p>
+          </div>
 
-      {/* <Image src={'/images/logo.png'} width={50} height={50} alt="" className=" cursor-pointer md:h-auto h-[20vh] object-fit w-auto" /> */}
-      <img src="../../public/images/logo.png" alt="" />
-      {/* <Image fill={true} /> */}
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+            <Link href="/registrations" className="bg-gradient-to-r from-red-600 to-red-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm md:text-base">
+              Register Now
+            </Link>
+            <Link href="/papers" className="bg-white text-red-600 border-2 border-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm md:text-base">
+              Submit Paper
+            </Link>
+          </div>
 
-      <div className="md:w-full flex flex-col items-center w-[80%]">
-        <DataBox
-          title="Welcome To IEM-ICDC 2025!"
-          data="IEM-ICDC 2025: International Conference on Computational Intelligence,
-          Data Science and Cloud Computing is an endeavour in enticing interest
-          for Computational Intelligence and Data Science applications in
-          diverse domains. As the world is moving towards industry 4.0,
-          Computational Intelligence, Data Science and Cloud Computing are
-          becoming more and more relevant in our society in all possible ways.
-          <br />
-          <br />
-          The most substantial new findings about AI and Robotics, Image
-          processing and NLP, Cloud Computing and big data analytics as well as
-          in Cyber security, Blockchain and IoT and various allied fields will
-          be presented in the three-day event comprised of insightful invited
-          talks, innovative technical sessions and informative workshops. The
-          general chair, the convener, along with the entire team invite
-          researchers and industry personnel around the world to take part in
-          the upcoming event to make the event a grand success."
-        />
-      </div>
-
-      <Separator />
-
-      <div className="md:w-full w-[100%] flex flex-col items-center justify-start gap-4">
-        <h1 className="w-full md:text-4xl text-2xl text-center text-primary font-bold after:w-fit after:absolute relative after:bottom-0 after:left-0 after:h-[2px] after:bg-primary">
-          Our Keynote Speakers
-        </h1>
-        <div className="md:w-[60%] w-full flex md:grid md:grid-cols-2 flex-col items-center justify-between">
-          <div className=" flex flex-col items-center justify-start gap-3">
-            <Image src="/images/S4.png" width={200} height={200} alt="SP1" />
-            <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
-              Prof. Michael Hinchey <br /> Michael Gerard Hinchey is an Irish
-              computer scientist and former Director of the Irish Software
-              Engineering Research Centre, a multi-university research centre
-              headquartered at the University of Limerick, Ireland.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 text-center">
+            <div className="space-y-1 md:space-y-2">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>March 16-18, 2026</div>
+              <div className="text-gray-200 text-sm md:text-base drop-shadow-md">Conference Dates</div>
+            </div>
+            <div className="space-y-1 md:space-y-2">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>IEM Kolkata</div>
+              <div className="text-gray-200 text-sm md:text-base drop-shadow-md">Venue</div>
+            </div>
+            <div className="space-y-1 md:space-y-2">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>3 Days</div>
+              <div className="text-gray-200 text-sm md:text-base drop-shadow-md">Duration</div>
+            </div>
           </div>
-          <div className=" flex flex-col items-center justify-start gap-3">
-            <Image src="/images/S1.png" width={200} height={200} alt="SP1" />
-            <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
-              Dr. Michael Sheng <br /> Distinguished Professor & Head of School
-              of Computing, Macquarie University Vice Chair, IEEE Technical
-              Community on Services Computing Member, ACS Technical Advisory
-              Board on IoT.
-            </p>
-          </div>
-          <div className=" flex flex-col items-center justify-start gap-3">
-            <Image src="/images/S2.png" width={200} height={200} alt="SP1" />
-            <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
-              Professor Dr. Amlan Chakrabarti <br /> Professor and Director,
-              A.K. Choudhury School of IT, University of Calcutta Adjunct
-              Professor, IIIT Delhi Chief Coordinator, International Center of
-              Excellence for Data Science, AI, and Futuristic Technologies,
-              Government of West Bengal
-            </p>
-          </div>
-          <div className=" flex flex-col items-center justify-start gap-3">
-            <Image src="/images/S3.png" width={200} height={200} alt="SP3" />
-            <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
-              Dr. Indranil Mitra, <br /> PhD, MBA, IPR, F-RSS (UK), FRSA (UK)
-              Partner @ PwC | AI Whisperer | Digital Transformation Leader |
-              Data Science & Emerging Technologies Expert
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-start gap-3">
-            <Image src="/images/S5.png" width={200} height={200} alt="SP5" />
-            <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
-              Dr. Anbuthambi Bhojarajan <br /> currently holds the position of
-              Head of Strategy, L&T EduTech, of Larsen & Toubro Ltd.
-            </p>
-          </div>
-          <div className="flex flex-col items-center justify-start gap-3">
-            <Image src="/images/S6.png" width={200} height={200} alt="SP5" />
-            <p className=" text-sm text-gray-700 text-center md:w-[20vw] w-full">
-            Professor Treena Basu is an Associate Professor and former Head of the Department of Mathematics at Occidental College, Los Angeles
-            <br />
-            <Link href={"https://www.oxy.edu"} className="text-blue-500 hover:underline">https://www.oxy.edu</Link>
-            </p>
-          </div>
+        </div>
+        
+        {/* Image Indicators */}
+        <div className="absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </div>
 
-      <Separator />
+      {/* Welcome to IEM ICDC 2026 Section */}
+      <div className="w-full max-w-7xl flex flex-col items-center space-y-12 px-4 py-16 bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-xl">
+        <div className="text-center space-y-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+            Welcome to IEM ICDC 2026
+          </h2>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+        </div>
 
-      <div className="w-[100%] flex flex-col items-center justify-center gap-3">
-        <h1 className="w-full md:text-4xl text-2xl text-center text-primary font-bold after:w-fit after:absolute relative after:bottom-0 after:left-0 after:h-[2px] after:bg-primary">
-          Our Technical Partners
-        </h1>
-        <div className="w-full md:w-[60%] flex md:flex-row flex-col items-center justify-center md:gap-20 gap-10 my-4">
-          <Image src="/images/logo2.png" width={200} height={200} alt="SP4" />
-          <Image
-            src="/images/logo3.png"
-            width={200}
-            height={200}
-            alt="SP5"
-            className=" col-span-2"
-          />
-        </div>
-        <div className=" w-full md:w-[60%] flex md:flex-row flex-col items-center justify-center md:gap-20 gap-10 my-4">
-          <Image src="/images/SP1.jpg" width={200} height={200} alt="SP1" />
-          <Image src="/images/SP2.jpg" width={300} height={200} alt="SP2" />
-          <Image src="/images/SP3.jpeg" width={200} height={200} alt="SP3" />
-        </div>
-        <div className="w-full md:w-[60%] flex md:flex-row flex-col items-center justify-center md:gap-20 gap-10 my-4">
-          <Image src="/images/SP4.jpeg" width={200} height={200} alt="SP4" />
-          <Image
-            src="/images/SP5.jpeg"
-            width={200}
-            height={200}
-            alt="SP5"
-            className=" col-span-2"
-          />
-          <Image src="/images/technical_sponsor.jpeg" width={200} height={200} alt="SP5" />
+        <div className="max-w-6xl text-center space-y-6">
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            <span className="font-semibold">IEM-ICDC 2026: International Conference on Computational Intelligence, Data Science and Cloud Computing</span> is an endeavour in enticing interest for Computational Intelligence and Data Science applications in diverse domains. As the world is moving towards industry 4.0, Computational Intelligence, Data Science and Cloud Computing are becoming more and more relevant in our society in all possible ways.
+          </p>
+          
+          <p className="text-lg text-gray-700 leading-relaxed">
+            The most substantial new findings about AI and Robotics, Image processing and NLP, Cloud Computing and big data analytics as well as in Cyber security, Blockchain and IoT and various allied fields will be presented in the three-day event comprised of insightful invited talks, innovative technical sessions and informative workshops.
+          </p>
+          
+          <p className="text-lg text-gray-700 leading-relaxed">
+            The general chair, the convener, along with the entire team invite researchers and industry personnel around the world to take part in the upcoming event to make the event a grand success.
+          </p>
         </div>
       </div>
 
       <Separator />
 
-      <div className="w-[80%] space-y-6 my-10">
-        <h1 className="w-full text-center md:text-4xl text-2xl text-primary font-bold mb-10">
-          Tracks Of The Conference
-        </h1>
-        <div className="w-full flex md:flex-row flex-col items-center justify-center gap-4">
+      <div className="w-full max-w-7xl flex flex-col items-center justify-start gap-8 animate-on-scroll px-4">
+        <div className="text-center space-y-4">
+          <h1 className="w-full md:text-5xl text-3xl text-center text-primary font-bold fade-in bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+            Past Keynote Speakers
+          </h1>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+        </div>
+        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 stagger-animation">
+          <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
+            <div className="relative">
+              <Image src="/images/S4.png" width={120} height={120} alt="Prof. Michael Hinchey" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div className="text-center">
+              <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Prof. Michael Hinchey</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Irish computer scientist and former Director of the Irish Software
+                Engineering Research Centre, University of Limerick, Ireland.
+              </p>
+            </div>
+          </div>
+          
+          <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
+            <div className="relative">
+              <Image src="/images/S1.png" width={120} height={120} alt="Dr. Michael Sheng" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div className="text-center">
+              <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Dr. Michael Sheng</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Distinguished Professor & Head of School of Computing, Macquarie University. 
+                Vice Chair, IEEE Technical Community on Services Computing.
+              </p>
+            </div>
+          </div>
+          
+          <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1">
+            <div className="relative">
+              <Image src="/images/S2.png" width={120} height={120} alt="Prof. Amlan Chakrabarti" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div className="text-center">
+              <h3 className="font-bold text-primary text-lg mb-2">Prof. Amlan Chakrabarti</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Professor and Director, A.K. Choudhury School of IT, University of Calcutta. 
+                Adjunct Professor, IIIT Delhi.
+              </p>
+            </div>
+          </div>
+          
+          <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
+            <div className="relative">
+              <Image src="/images/S3.png" width={120} height={120} alt="Dr. Indranil Mitra" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div className="text-center">
+              <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Dr. Indranil Mitra</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Partner @ PwC | AI Whisperer | Digital Transformation Leader | 
+                Data Science & Emerging Technologies Expert.
+              </p>
+            </div>
+          </div>
+          
+          <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
+            <div className="relative">
+              <Image src="/images/S5.png" width={120} height={120} alt="Dr. Anbuthambi Bhojarajan" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div className="text-center">
+              <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Dr. Anbuthambi Bhojarajan</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Head of Strategy, L&T EduTech, Larsen & Toubro Ltd.
+              </p>
+            </div>
+          </div>
+          
+          <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
+            <div className="relative">
+              <Image src="/images/S6.png" width={120} height={120} alt="Prof. Treena Basu" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div className="text-center">
+              <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Prof. Treena Basu</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Associate Professor, Department of Mathematics, Occidental College, Los Angeles.
+                <br />
+                <Link href={"https://www.oxy.edu"} className="text-blue-500 hover:underline">https://www.oxy.edu</Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="w-full max-w-7xl flex flex-col items-center justify-center gap-8 animate-on-scroll px-4">
+        <div className="text-center space-y-4">
+          <h1 className="w-full md:text-5xl text-3xl text-center text-primary font-bold fade-in bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+            Past Technical Partners
+          </h1>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+        </div>
+        <div className="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 stagger-animation">
+          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
+            <Image src="/images/logo2.png" width={150} height={100} alt="Partner 1" className="object-contain max-h-[60px] md:max-h-[80px] w-full group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
+            <Image src="/images/logo3.png" width={150} height={100} alt="Partner 2" className="object-contain max-h-[60px] md:max-h-[80px] w-full group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
+            <Image src="/images/SP1.jpg" width={150} height={100} alt="Partner 3" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
+            <Image src="/images/SP2.jpg" width={180} height={100} alt="Partner 4" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
+            <Image src="/images/SP3.jpeg" width={150} height={100} alt="Partner 5" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
+            <Image src="/images/SP4.jpeg" width={150} height={100} alt="Partner 6" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
+            <Image src="/images/SP5.jpeg" width={150} height={100} alt="Partner 7" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
+            <Image src="/images/technical_sponsor.jpeg" width={150} height={100} alt="Technical Sponsor" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
+          </div>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="w-full max-w-6xl space-y-8 animate-on-scroll px-4">
+        <div className="text-center space-y-4">
+          <h1 className="w-full text-center md:text-5xl text-3xl text-primary font-bold fade-in bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+            Conference Tracks
+          </h1>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Explore four specialized research areas covering cutting-edge topics in computational intelligence
+          </p>
+        </div>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 stagger-animation">
           <Card
             id="track1"
             track="AI And Robotics"
-            Avatar={<Bot className="size-[60%]" />}
+            Avatar={<Bot className="w-16 h-16" />}
           />
-
           <Card
             id="track2"
             track="Image Processing And NLP"
-            Avatar={<ImageIcon className="size-[60%]" />}
+            Avatar={<ImageIcon className="w-16 h-16" />}
           />
-
           <Card
             id="track3"
             track="Cloud Computing And Big Data Analytics"
-            Avatar={<Cpu className="size-[60%]" />}
+            Avatar={<Cpu className="w-16 h-16" />}
           />
-
           <Card
             id="track4"
             track="Cyber Security, Blockchain And IoT"
-            Avatar={<ShieldHalf className="size-[60%]" />}
+            Avatar={<ShieldHalf className="w-16 h-16" />}
           />
         </div>
       </div>
 
       <Separator />
 
-      <div className=" space-y-3 text-center w-[80%]" id="importantDates">
-        <h1 className="md:text-4xl text-2xl font-bold text-primary mb-10">
-          Important Dates
-        </h1>
+      {/* Get Started Today Section */}
+      <div className="w-full max-w-7xl flex flex-col items-center space-y-12 px-4 py-16">
+        <div className="text-center space-y-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+            Get Started Today
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Take the next step in your research journey with IEM ICDC 2026
+          </p>
+        </div>
 
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-          <table className="w-full text-sm text-left rtl:text-right text-primary">
-            <thead className="text-primary uppercase bg-gray-50">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+          <Link href="/papers" className="group bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div className="space-y-4">
+              <div className="text-4xl">📄</div>
+              <h3 className="text-xl font-bold text-gray-800">Submit Your Paper</h3>
+              <p className="text-gray-600">
+                Join the global community of researchers and share your innovations.
+              </p>
+              <div className="text-red-600 font-semibold group-hover:text-red-700">
+                Learn More →
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/registrations" className="group bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div className="space-y-4">
+              <div className="text-4xl">🎫</div>
+              <h3 className="text-xl font-bold text-gray-800">Register Now</h3>
+              <p className="text-gray-600">
+                Secure your spot at the premier computational intelligence conference.
+              </p>
+              <div className="text-red-600 font-semibold group-hover:text-red-700">
+                Learn More →
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/papers" className="group bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div className="space-y-4">
+              <div className="text-4xl">🔬</div>
+              <h3 className="text-xl font-bold text-gray-800">Explore Tracks</h3>
+              <p className="text-gray-600">
+                Discover four specialized research areas covering cutting-edge topics.
+              </p>
+              <div className="text-red-600 font-semibold group-hover:text-red-700">
+                Learn More →
+              </div>
+            </div>
+          </Link>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="space-y-8 text-center w-full max-w-5xl animate-on-scroll px-4" id="importantDates">
+        <div className="text-center space-y-4">
+          <h1 className="md:text-5xl text-3xl font-bold text-primary fade-in bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
+            Important Dates
+          </h1>
+          <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl border border-gray-100 overflow-hidden fade-in-delay-1 hover-lift">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left text-gray-700 min-w-[400px]">
+            <thead className="text-primary bg-gray-50">
               <tr>
-                <th
-                  scope="col"
-                  className="px-6 py-3 flex items-center justify-start gap-2 md:text-lg text-sm font-extrabold"
-                >
-                  <CalendarCheck className="" />
-                  <p className="">Event</p>
+                <th scope="col" className="px-6 py-4 font-bold">
+                  <div className="flex items-center gap-2">
+                    <CalendarCheck className="w-5 h-5" />
+                    <span>Event</span>
+                  </div>
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-3 md:text-lg text-sm font-bold"
-                >
-                  <div className="flex items-center justify-start gap-2">
-                    <CalendarDays />
-                    <p>Date</p>
+                <th scope="col" className="px-6 py-4 font-bold">
+                  <div className="flex items-center gap-2">
+                    <CalendarDays className="w-5 h-5" />
+                    <span>Date</span>
                   </div>
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr className="odd:bg-white even:bg-gray-50 border-b">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium md:text-lg text-sm text-gray-700 whitespace-nowrap text-wrap md:text-nowrap"
-                >
+              <tr className="border-b hover:bg-gray-50 transition-colors">
+                <td className="px-6 py-4 font-medium">
                   Deadline for full paper Submission
-                </th>
-                <td className="px-6 py-4 md:text-lg text-sm">
-                  <span className=" text-pink-600">SUBMISSION CLOSED</span>
+                </td>
+                <td className="px-6 py-4">
+                  <span className="text-green-600 font-semibold">December 10, 2025</span>
                 </td>
               </tr>
-              <tr className="odd:bg-white even:bg-gray-50 border-b">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium md:text-lg text-sm text-gray-700 whitespace-nowrap text-wrap md:text-nowrap"
-                >
+              <tr className="border-b hover:bg-gray-50 transition-colors">
+                <td className="px-6 py-4 font-medium">
                   Acceptance notification for papers
-                </th>
-                <td className="px-6 py-4 md:text-lg text-sm">March 11, 2025</td>
+                </td>
+                <td className="px-6 py-4 font-semibold">February 4, 2026</td>
               </tr>
-              <tr className="odd:bg-white even:bg-gray-50 border-b">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium md:text-lg text-sm text-gray-700 whitespace-nowrap text-wrap md:text-nowrap"
-                >
-                  Deadline for camera ready paper submission:
-                </th>
-                <td className="px-6 py-4 md:text-lg text-sm">March 20, 2025</td>
+              <tr className="border-b hover:bg-gray-50 transition-colors">
+                <td className="px-6 py-4 font-medium">
+                  Deadline for camera ready paper submission
+                </td>
+                <td className="px-6 py-4 font-semibold">February 20, 2026</td>
               </tr>
-              <tr className="odd:bg-white even:bg-gray-50 border-b">
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium md:text-lg text-sm text-gray-700 whitespace-nowrap text-wrap md:text-nowrap"
-                >
+              <tr className="border-b hover:bg-gray-50 transition-colors">
+                <td className="px-6 py-4 font-medium">
                   Deadline for paper and participation registration
-                </th>
-                <td className="px-6 py-4 text-lg">March 17, 2025</td>
+                </td>
+                <td className="px-6 py-4 font-semibold">February 10, 2026</td>
+              </tr>
+              <tr className="hover:bg-gray-50 transition-colors">
+                <td className="px-6 py-4 font-medium">
+                  Presentation submission
+                </td>
+                <td className="px-6 py-4 font-semibold">March 2, 2026</td>
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </Container>

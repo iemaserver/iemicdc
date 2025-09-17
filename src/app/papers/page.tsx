@@ -1,5 +1,4 @@
 import { Container } from "@/components/Container";
-import PublicationDetails from "@/components/PublicationDetails";
 import { Separator } from "@/components/Separator";
 // import Image from "next/image";
 import Link from "next/link";
@@ -35,54 +34,23 @@ const Track = ({
 
 export default function Papers() {
   return (
-    <Container className=" py-10 flex flex-col items-center justify-start gap-10 animate-animate-appear">
+    <>
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-red-600 via-red-700 to-black text-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Call for Papers</h1>
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            Submit your research papers for IEM ICDC 2026 across four exciting tracks
+          </p>
+        </div>
+      </div>
+
+      <Container className="py-10 flex flex-col items-center justify-start gap-10 mt-12 animate-animate-appear">
       <div className="w-[80%] text-gray-700">
         <h3 className="md:text-xl text-lg font-medium">
-          All papers should be submitted through EasyChair link.
+          Call for Papers - Coming Soon
         </h3>
         <ul className="my-4 list-disc mx-4 text-lg">
-          <li>
-            EasyChair submission link{" "}
-            <Link
-              className="text-blue-500 underline"
-              target="__blank"
-              href="https://easychair.org/conferences/?conf=iemicdc2025"
-            >
-              here
-            </Link>
-          </li>
-          <li>
-            Springer Paper Submission Guideline{" "}
-            <Link
-              className="text-blue-500 underline"
-              target="__blank"
-              href={
-                "https://www.springer.com/gp/authors-editors/conference-proceedings/conference-proceedings-guidelines"
-              }
-            >
-              here
-            </Link>
-          </li>
-          <li>
-            Download Latex Package{" "}
-            <Link
-              className="text-blue-500 underline"
-              target="__blank"
-              href={"/templates/Latex_Package.zip"}
-            >
-              here
-            </Link>
-          </li>
-          <li>
-            Download Word Template{" "}
-            <Link
-              className="text-blue-500 underline"
-              target="__blank"
-              href={"/templates/Word_Template.zip"}
-            >
-              here
-            </Link>
-          </li>
           <li>
             <span className="font-bold">Awards:</span> Best paper award will be
             provided.
@@ -93,7 +61,6 @@ export default function Papers() {
           </strong>
         </ul>
       </div>
-      <PublicationDetails />
       <div className="w-[80%]">
         <h3 className="md:text-xl text-lg font-medium text-gray-700">
           Topic of interest includes, though not limited to
@@ -198,5 +165,6 @@ export default function Papers() {
         />
       </div>
     </Container>
+    </>
   );
 }

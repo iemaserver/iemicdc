@@ -33,39 +33,45 @@ const CreateTable = ({
 
 export default function Registration() {
   return (
-    <Container className=" flex flex-col items-center justify-start gap-4 py-10 animate-animate-appear">
+    <>
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-red-600 via-red-700 to-black text-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Registration</h1>
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            Secure your place at IEM ICDC 2026 with our flexible registration options
+          </p>
+        </div>
+      </div>
+
+      <Container className="flex flex-col items-center justify-start gap-4 py-10 mt-12 animate-animate-appear">
       <h1 className="md:text-4xl text-2xl text-primary font-bold w-[80%]">
         Registration Details
       </h1>
       <Separator />
       <ul className=" list-disc md:w-[75%] w-[80%] text-gray-700 space-y-6">
-        <li>
-          Registration Form
-          <Link className="text-blue-500 hover:underline mx-1" href={"https://forms.office.com/r/kTHwyVscZ1"}>here</Link>
-          <Image src={"/images/QR.jpeg"} width={300} height={300} alt="" />
-        </li>
         <li>Registration fee per accepted paper</li>
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-6">
           <CreateTable
             datas={[
-              { col1: "Indian Student", col2: "6000 INR" },
-              { col1: "Indian Researcher/Academician", col2: "7000 INR" },
-              { col1: "Indian Author from Industry", col2: "8000 INR" },
-              { col1: "Foreign Author", col2: "150 USD" },
+              { col1: "Indian Student", col2: "8,000 INR" },
+              { col1: "Indian Researcher", col2: "9,000 INR" },
+              { col1: "Indian Author from Industry", col2: "10,000 INR" },
+              { col1: "Foreign Author", col2: "250 USD" },
               {
                 col1: "Charges for per extra page, above 10 pages per paper",
                 col2: "",
                 className: "font-bold",
               },
-              { col1: "Indian Author", col2: "350 INR" },
-              { col1: "Foreign Author", col2: "20 USD" },
+              { col1: "Indian Author", col2: "400 INR" },
+              { col1: "Foreign Author", col2: "50 USD" },
               {
-                col1: "Registration for participation (other than registered authors)",
+                col1: "For participation (other than registered authors)",
                 col2: "",
                 className: "font-bold",
               },
-              { col1: "Indian Participant", col2: "2000 INR" },
-              { col1: "Foreign Participant", col2: "80 USD" },
+              { col1: "Indian Participant", col2: "3,000 INR" },
+              { col1: "Foreign Participant", col2: "100 USD" },
             ]}
           />
         </div>
@@ -105,5 +111,6 @@ export default function Registration() {
         </div>
       </ul>
     </Container>
+    </>
   );
 }

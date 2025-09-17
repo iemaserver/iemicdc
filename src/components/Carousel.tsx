@@ -88,30 +88,48 @@ function Carousel({ ...props }) {
             <div className="rounded-full size-2 border-[1px] border-black"></div>
             <div className="rounded-full size-2 border-[1px] border-black"></div>
           </div>
-          <div className="w-full h-full bg-black absolute z-40 bg-opacity-60 flex flex-col items-center justify-center gap-2 md:gap-10 text-white">
-            <h1 className="md:text-[5rem] text-2xl font-bold">IEM-ICDC 2025</h1>
-            <p className="md:text-3xl text md:w-full w-[80%] text-center text-gray-200">
-              3rd International Conference on <br />
-              Computational Intelligence, Data Science and Cloud Computing
-            </p>
-            <h3 className="text-xl text-gray-300">April 11-12, 2025</h3>
-            <p className="md:text-xl md:w-full w-[80%] text-sm text-center font-bold justify-self-start my-0 text-gray-300">
-              Organized by <br /> Department of Information Technology & Department of
-              Computer Science & Engineering <br /> Institute of Engineering &
-              Management, Kolkata, India
-            </p>
+          <div className="w-full h-full bg-gradient-to-br from-black/70 via-black/60 to-black/70 absolute z-40 flex flex-col items-center justify-center gap-4 md:gap-8 text-white px-6">
+            <div className="text-center space-y-4 fade-in">
+              <h1 className="md:text-7xl text-4xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent drop-shadow-2xl">
+                IEM ICDC 2026
+              </h1>
+              <div className="h-1 w-24 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="text-center space-y-3 fade-in-delay-1">
+              <p className="md:text-2xl text-lg font-semibold text-gray-100 max-w-4xl leading-relaxed">
+                5th International Conference on
+              </p>
+              <p className="md:text-xl text-base text-gray-200 max-w-4xl">
+                Computational Intelligence, Data Science and Cloud Computing
+              </p>
+            </div>
 
-            <div className="w-full flex items-center justify-evenly mt-10 md:mt-0">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/20 fade-in-delay-2">
+              <h3 className="text-xl md:text-2xl font-semibold text-yellow-300">March 27-28, 2026</h3>
+            </div>
+            
+            <div className="text-center space-y-2 fade-in-delay-3">
+              <p className="md:text-lg text-sm font-medium text-gray-300">Organized by</p>
+              <p className="md:text-base text-sm text-gray-200 max-w-3xl leading-relaxed">
+                Department of Information Technology & Department of Computer Science & Engineering
+              </p>
+              <p className="md:text-base text-sm font-semibold text-gray-100">
+                Institute of Engineering & Management, Kolkata, India
+              </p>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-8 fade-in-delay-3">
               <ShiningButton
-                label="Registration"
+                label="Register Now"
                 onClick={() => router.push("/registrations")}
               />
               <ShiningButton
-                label="Know More"
+                label="Learn More"
                 onClick={() => window.scrollTo(0, 650)}
               />
               <ShiningButton
-                label="Venue"
+                label="Venue Details"
                 onClick={() => router.push("/venue")}
               />
             </div>

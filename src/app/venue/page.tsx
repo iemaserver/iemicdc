@@ -5,7 +5,18 @@ import Image from "next/image";
 
 export default function Venue() {
   return (
-    <Container className="flex flex-col items-center justify-center py-4">
+    <>
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-red-600 via-red-700 to-black text-white py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Venue</h1>
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            IEM ICDC 2026 will be held at Software Technology Parks of India, Kolkata
+          </p>
+        </div>
+      </div>
+
+      <Container className="flex flex-col items-center justify-center py-4 mt-12">
       <div className="w-full h-[70vh] flex flex-col items-center justify-start gap-8">
         <h1 className="font-bold text-primary text-4xl">
           Software Technology Parks Of India
@@ -30,5 +41,6 @@ export default function Venue() {
 
       {/* Location Section */}
     </Container>
+    </>
   );
 }

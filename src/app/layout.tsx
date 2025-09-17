@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "IEM ICDC 2025",
+  title: "IEM ICDC 2026",
   description: "Organized by IEM UEM",
 };
 
@@ -34,7 +34,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${itim.className}`}
       >
         <Header />
-        {children}
+        <div className="mt-16">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
