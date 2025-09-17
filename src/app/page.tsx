@@ -60,7 +60,7 @@ export default function Home() {
   useScrollAnimation();
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const heroImages = ['/images/dp2.jpg', '/images/dp3.jpg', '/images/dp6.jpg'];
+  const heroImages = ['/images/dp2.jpg', '/images/dp3.jpg', '/images/dp6.jpg', '/images/iem.jpeg', '/images/dp7.jpg', '/images/dp8.jpg'];
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,7 +68,7 @@ export default function Home() {
     }, 4000); // Change image every 4 seconds
     
     return () => clearInterval(interval);
-  }, []);
+  }, [heroImages.length]);
 
   return (
     <Container className="flex flex-col items-center justify-start gap-16 pb-8 min-h-screen fade-in max-w-full overflow-hidden">
@@ -136,7 +136,7 @@ export default function Home() {
               <div className="text-gray-200 text-sm md:text-base drop-shadow-md">Conference Dates</div>
             </div>
             <div className="space-y-1 md:space-y-2">
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>IEM Kolkata</div>
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>Kolkata</div>
               <div className="text-gray-200 text-sm md:text-base drop-shadow-md">Venue</div>
             </div>
             <div className="space-y-1 md:space-y-2">

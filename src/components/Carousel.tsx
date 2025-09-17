@@ -16,14 +16,14 @@ function Carousel({ ...props }) {
     const interval = setInterval(() => {
       // console.log(counter)
       if (slider) {
-        if (counter.current === 2) {
+        if (counter.current === 5) {
           counter.current = 0;
           const nodes = slider.children;
           Array.from(nodes).forEach((node) =>
             node.classList.replace("opacity-0", "opacity-100")
           );
         } else {
-          slider?.children[3 - counter.current - 1]?.classList.replace(
+          slider?.children[6 - counter.current - 1]?.classList.replace(
             "opacity-100",
             "opacity-0"
           );
@@ -62,16 +62,34 @@ function Carousel({ ...props }) {
             className="absolute left-0 top-0 w-full md:h-full h-[90%] transition-opacity duration-500 opacity-100  md:object-fit object-cover"
           />
           <Image
-            src="/images/iem.jpeg"
-            fill={true}
-            alt=""
-            className="absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full object-fit h-[90%]"
-          />
-          <Image
             src="/images/dp3.jpg"
             fill={true}
             alt=""
             className="absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-fit object-cover"
+          />
+          <Image
+            src="/images/dp6.jpg"
+            fill={true}
+            alt=""
+            className="absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-fit object-cover"
+          />
+          <Image
+            src="/images/dp7.jpg"
+            fill={true}
+            alt=""
+            className="absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-fit object-cover"
+          />
+          <Image
+            src="/images/dp8.jpg"
+            fill={true}
+            alt=""
+            className="absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-fit object-cover"
+          />
+          <Image
+            src="/images/iem.jpeg"
+            fill={true}
+            alt=""
+            className="absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full object-fit h-[90%]"
             onLoad={(e) =>
               e.currentTarget.parentElement?.classList.replace(
                 "opacity-0",
@@ -87,6 +105,9 @@ function Carousel({ ...props }) {
             <div className="rounded-full size-2 border-[1px] border-black bg-black scale-125"></div>
             <div className="rounded-full size-2 border-[1px] border-black"></div>
             <div className="rounded-full size-2 border-[1px] border-black"></div>
+            <div className="rounded-full size-2 border-[1px] border-black"></div>
+            <div className="rounded-full size-2 border-[1px] border-black"></div>
+            <div className="rounded-full size-2 border-[1px] border-black"></div>
           </div>
           <div className="w-full h-full bg-gradient-to-br from-black/70 via-black/60 to-black/70 absolute z-40 flex flex-col items-center justify-center gap-4 md:gap-8 text-white px-6">
             <div className="text-center space-y-4 fade-in">
@@ -98,7 +119,7 @@ function Carousel({ ...props }) {
             
             <div className="text-center space-y-3 fade-in-delay-1">
               <p className="md:text-2xl text-lg font-semibold text-gray-100 max-w-4xl leading-relaxed">
-                5th International Conference on
+                4th International Conference on
               </p>
               <p className="md:text-xl text-base text-gray-200 max-w-4xl">
                 Computational Intelligence, Data Science and Cloud Computing
