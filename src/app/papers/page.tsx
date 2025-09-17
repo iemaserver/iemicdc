@@ -1,6 +1,29 @@
 import { Container } from "@/components/Container";
 import Link from "next/link";
 import { Bot, Shield, Cloud, Eye, Award, FileText, Calendar, Users } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Call for Papers - Paper Submission Guidelines",
+  description: "Submit your research papers to IEM ICDC 2026. Learn about submission guidelines, important dates, review process, and conference tracks in AI, Data Science, Cloud Computing, and more.",
+  keywords: [
+    "Call for Papers",
+    "Paper Submission",
+    "Research Papers",
+    "Conference Submission",
+    "AI Research",
+    "Data Science Papers",
+    "Cloud Computing Research",
+    "Academic Publishing",
+    "Peer Review",
+    "Conference Proceedings"
+  ],
+  openGraph: {
+    title: "Call for Papers - IEM ICDC 2026",
+    description: "Submit your research papers to IEM ICDC 2026. Learn about submission guidelines, important dates, and conference tracks.",
+    images: ["/images/S1.png"],
+  },
+};
 
 const getTrackIcon = (trackNumber: number) => {
   switch (trackNumber) {
@@ -260,12 +283,6 @@ export default function Papers() {
                 className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Submit Your Paper
-              </Link>
-              <Link 
-                href="/schedule" 
-                className="bg-red-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                View Schedule
               </Link>
             </div>
           </div>

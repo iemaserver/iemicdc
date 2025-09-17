@@ -1,6 +1,28 @@
 import { Container } from "@/components/Container";
 import { CopyButton } from "@/components/CopyButton";
 import { CreditCard, DollarSign, FileText, Users, Clock, Shield } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Conference Registration - Fees & Payment",
+  description: "Register for IEM ICDC 2026 International Conference. Check registration fees for students, faculty, and industry professionals. Learn about payment methods and registration deadlines.",
+  keywords: [
+    "Conference Registration",
+    "Registration Fees",
+    "Payment Methods",
+    "Early Bird Registration",
+    "Student Registration",
+    "Faculty Registration",
+    "Industry Registration",
+    "Conference Payment",
+    "Registration Deadline"
+  ],
+  openGraph: {
+    title: "Conference Registration - IEM ICDC 2026",
+    description: "Register for IEM ICDC 2026 International Conference. Check registration fees and payment methods.",
+    images: ["/images/QR.jpeg"],
+  },
+};
 
 const ModernTable = ({
   title,
@@ -190,7 +212,6 @@ export default function Registration() {
             <h3 className="text-2xl font-bold mb-4">Important Registration Notes</h3>
             <div className="space-y-3 text-orange-100">
               <p>✅ Registration is mandatory for all accepted papers</p>
-              <p>✅ Early bird discounts available until February 15, 2026</p>
               <p>✅ Certificate and conference kit included with registration</p>
               <p>✅ Payments should be made as per the accepted paper category</p>
             </div>
@@ -212,7 +233,7 @@ export default function Registration() {
                 Submit Paper First
               </a>
               <a 
-                href="mailto:contact@iemicdc2026.com" 
+                href="mailto:icdc@iem.edu.in" 
                 className="bg-red-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Contact for Registration

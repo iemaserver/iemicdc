@@ -1,6 +1,27 @@
 import { Container } from "@/components/Container";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About the Conference",
+  description: "Learn about IEM ICDC 2026 - International Conference on Computational Intelligence, Data Science and Cloud Computing. Discover our mission, vision, and the exciting research areas we cover in AI, data science, and cloud computing.",
+  keywords: [
+    "About IEM ICDC 2026",
+    "Conference Information",
+    "Research Areas",
+    "Computational Intelligence",
+    "Data Science Conference",
+    "Cloud Computing Research",
+    "AI Conference India",
+    "Academic Research"
+  ],
+  openGraph: {
+    title: "About IEM ICDC 2026 - Conference Details",
+    description: "Learn about IEM ICDC 2026 - International Conference on Computational Intelligence, Data Science and Cloud Computing. Discover our mission, vision, and research areas.",
+    images: ["/images/A1.jpeg"],
+  },
+};
 
 export default function About() {
   return (

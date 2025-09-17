@@ -114,7 +114,7 @@ export default function Venue() {
   ];
 
   const contactInfo = [
-    { icon: <Phone className="w-5 h-5" />, label: "Phone", value: "033 2367 3598" },
+    { icon: <Phone className="w-5 h-5" />, label: "Phone", value: "+91 9674032480" },
     { icon: <MapPin className="w-5 h-5" />, label: "Address", value: "Plot No- 5/1, Salt Lake Bypass, DP Block, Sector V, Bidhannagar, Kolkata, West Bengal 700091" },
     { icon: <Clock className="w-5 h-5" />, label: "Conference Hours", value: "9:00 AM - 6:00 PM (All 3 Days)" },
   ];
@@ -279,12 +279,6 @@ export default function Venue() {
                 className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Register Now
-              </a>
-              <a 
-                href="/schedule" 
-                className="bg-red-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                View Schedule
               </a>
             </div>
           </div>
