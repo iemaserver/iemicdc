@@ -70,7 +70,7 @@ export default function Venue() {
             </div>
 
             {/* Call to Action */}
-            <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-8 text-white">
+            {/* <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-8 text-white">
               <h3 className="text-xl font-bold mb-4">Want to Stay Updated?</h3>
               <p className="text-red-100 mb-6">
                 Register now and be the first to know about venue details and other conference updates
@@ -89,7 +89,7 @@ export default function Venue() {
                   Submit Paper
                 </a>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>

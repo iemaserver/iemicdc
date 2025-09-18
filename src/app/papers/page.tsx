@@ -83,14 +83,14 @@ const Track = ({
               className="group flex items-start space-x-3 p-4 bg-white rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-200"
             >
               <div className={`w-2 h-2 bg-gradient-to-r ${colorClass} rounded-full mt-2 group-hover:scale-125 transition-transform duration-200`}></div>
-              <span className="text-gray-700 group-hover:text-gray-800 text-sm leading-relaxed flex-1">
+              <span className="text-gray-700 group-hover:text-gray-800 text-md leading-relaxed flex-1">
                 {item}
               </span>
             </div>
           ))}
         </div>
         
-        <div className="mt-8 flex justify-between items-center">
+        {/* <div className="mt-8 flex justify-between items-center">
           <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
             {list.length} Research Areas
           </span>
@@ -100,7 +100,7 @@ const Track = ({
           >
             Submit to This Track
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -131,7 +131,7 @@ export default function Papers() {
           
           <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
             <FileText className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">10 Pages Minimum</h3>
+            <h3 className="text-xl font-bold mb-2">10 Pages Preferably</h3>
             <p className="text-blue-100">Full papers preferred. No short papers accepted</p>
           </div>
           
@@ -148,7 +148,7 @@ export default function Papers() {
             <Calendar className="w-16 h-16 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-4">Submission Guidelines</h3>
             <div className="space-y-2 text-orange-100">
-              <p className="text-lg">📄 Papers should preferably be 10 pages minimum</p>
+              <p className="text-lg">📄 Papers should be atleast 10 pages</p>
               <p className="text-lg">🏆 Best paper awards will be provided</p>
               <p className="text-lg">❌ Short papers will not be accepted</p>
             </div>
@@ -271,7 +271,7 @@ export default function Papers() {
         </div>
 
         {/* Call to Action */}
-        <div className="w-full max-w-4xl">
+        {/* <div className="w-full max-w-4xl">
           <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl shadow-xl p-8 md:p-12 text-white text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Submit?</h3>
             <p className="text-red-100 mb-8 text-lg">
@@ -286,7 +286,7 @@ export default function Papers() {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </Container>
     </>

@@ -108,12 +108,8 @@ export default function Home() {
           
           <div className="space-y-4 md:space-y-6 max-w-4xl">
             <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-semibold text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
-              International Conference on Computational Intelligence, Data Science and Cloud Computing
+              4th International Conference on Computational Intelligence, Data Science and Cloud Computing
             </h2>
-            
-            <div className="inline-block bg-gradient-to-r from-red-500 to-red-600 px-4 md:px-6 py-2 rounded-full drop-shadow-lg">
-              <span className="text-white font-semibold text-sm md:text-base">FOURTH EDITION</span>
-            </div>
             
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 leading-relaxed max-w-3xl mx-auto drop-shadow-lg" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.7)'}}>
               Join leading researchers, industry experts, and innovators in exploring the latest advances in 
@@ -138,10 +134,6 @@ export default function Home() {
             <div className="space-y-1 md:space-y-2">
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>Kolkata</div>
               <div className="text-gray-200 text-sm md:text-base drop-shadow-md">Venue</div>
-            </div>
-            <div className="space-y-1 md:space-y-2">
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>3 Days</div>
-              <div className="text-gray-200 text-sm md:text-base drop-shadow-md">Duration</div>
             </div>
           </div>
         </div>
@@ -169,7 +161,7 @@ export default function Home() {
           <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
         </div>
 
-        <div className="max-w-6xl text-center space-y-6">
+        <div className="max-w-6xl text-justify space-y-6">
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
             <span className="font-semibold">IEM-ICDC 2026: International Conference on Computational Intelligence, Data Science and Cloud Computing</span> is an endeavour in enticing interest for Computational Intelligence and Data Science applications in diverse domains. As the world is moving towards industry 4.0, Computational Intelligence, Data Science and Cloud Computing are becoming more and more relevant in our society in all possible ways.
           </p>
@@ -189,7 +181,7 @@ export default function Home() {
       <div className="w-full max-w-7xl flex flex-col items-center justify-start gap-8 animate-on-scroll px-4">
         <div className="text-center space-y-4">
           <h1 className="w-full md:text-5xl text-3xl text-center text-primary font-bold fade-in bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
-            Past Keynote Speakers
+            Keynote Speakers - ICDC 2025
           </h1>
           <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
         </div>
@@ -285,31 +277,16 @@ export default function Home() {
       <div className="w-full max-w-7xl flex flex-col items-center justify-center gap-8 animate-on-scroll px-4">
         <div className="text-center space-y-4">
           <h1 className="w-full md:text-5xl text-3xl text-center text-primary font-bold fade-in bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
-            Past Technical Partners
+            Technical Partners
           </h1>
           <div className="h-1 w-32 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
         </div>
-        <div className="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 stagger-animation">
+        <div className="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 items-center gap-4 md:gap-8 stagger-animation">
           <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
             <Image src="/images/logo2.png" width={150} height={100} alt="Partner 1" className="object-contain max-h-[60px] md:max-h-[80px] w-full group-hover:scale-105 transition-transform duration-300" />
           </div>
           <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
             <Image src="/images/logo3.png" width={150} height={100} alt="Partner 2" className="object-contain max-h-[60px] md:max-h-[80px] w-full group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
-            <Image src="/images/SP1.jpg" width={150} height={100} alt="Partner 3" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
-            <Image src="/images/SP2.jpg" width={180} height={100} alt="Partner 4" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
-            <Image src="/images/SP3.jpeg" width={150} height={100} alt="Partner 5" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
-            <Image src="/images/SP4.jpeg" width={150} height={100} alt="Partner 6" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
-            <Image src="/images/SP5.jpeg" width={150} height={100} alt="Partner 7" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
           </div>
           <div className="group bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift border border-gray-100">
             <Image src="/images/technical_sponsor.jpeg" width={150} height={100} alt="Technical Sponsor" className="object-contain max-h-[60px] md:max-h-[80px] w-full rounded group-hover:scale-105 transition-transform duration-300" />
@@ -356,7 +333,7 @@ export default function Home() {
       <Separator />
 
       {/* Get Started Today Section */}
-      <div className="w-full max-w-7xl flex flex-col items-center space-y-12 px-4 py-16">
+      {/* <div className="w-full max-w-7xl flex flex-col items-center space-y-12 px-4 py-16">
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
             Get Started Today
@@ -406,9 +383,7 @@ export default function Home() {
             </div>
           </Link>
         </div>
-      </div>
-
-      <Separator />
+      </div> */}
 
       <div className="space-y-8 text-center w-full max-w-5xl animate-on-scroll px-4" id="importantDates">
         <div className="text-center space-y-4">

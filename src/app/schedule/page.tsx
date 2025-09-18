@@ -104,7 +104,7 @@ export default function Schedule() {
                 </div>
 
                 {/* Call to Action */}
-                <div className="text-center space-y-6">
+                {/* <div className="text-center space-y-6">
                     <p className="text-gray-600 text-lg">
                         Stay updated with the latest conference information
                     </p>
@@ -122,7 +122,7 @@ export default function Schedule() {
                             Register Now
                         </a>
                     </div>
-                </div>
+                </div> */}
 
             </Container>
         </>
