@@ -11,7 +11,7 @@ const BlogSidebar2 = ({ onSelect }: { onSelect: (blog: "blog1" | "blog2" | "blog
         {/* Heading */}
         {/* Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-snug mb-6">
+          <h1 className="text-3xl sm:text-2xl lg:text-4xl font-extrabold text-gray-900 leading-snug mb-6">
             <span className="block">Institute of Engineering & Management</span>
             <span className="block text-[#4A6CF7] mt-2">Kolkata, India</span>
           </h1>

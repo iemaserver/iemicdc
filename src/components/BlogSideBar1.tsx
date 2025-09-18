@@ -9,7 +9,7 @@ const BlogSidebar1 = ({ onSelect }: { onSelect: (blog: "blog1" | "blog2" | "blog
         {/* Heading */}
         {/* Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
+          <h1 className="text-2xl lg:text-4xl md:text-3xl font-extrabold text-gray-900 leading-tight tracking-tight">
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#4A6CF7] via-indigo-500 to-purple-600">
               4th International Conference
             </span>
@@ -107,11 +107,11 @@ const BlogSidebar1 = ({ onSelect }: { onSelect: (blog: "blog1" | "blog2" | "blog
               <ul className="space-y-4 text-gray-700">
                 <li className="flex items-center gap-3">
                   <FaCalendarAlt className="text-[#4A6CF7]" />
-                  <span>August 10-12, 2026</span>
+                  <span>March 16-18, 2026</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <FaMapMarkerAlt className="text-[#4A6CF7]" />
-                  <span>Canada (Venue TBA)</span>
+                  <span>Kolkata</span>
                 </li>
                 {/* <li className="flex items-center gap-3">
                   <FaClock className="text-[#4A6CF7]" />
