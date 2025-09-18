@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://iemicdc2026.com'),
+  metadataBase: new URL('https://www.iemicdc.org'),
   title: {
     default: "IEM ICDC 2026 - International Conference on Computational Intelligence, Data Science and Cloud Computing",
     template: "%s | IEM ICDC 2026"
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://iemicdc2026.com",
+    url: "https://www.iemicdc.org",
     siteName: "IEM ICDC 2026",
     title: "IEM ICDC 2026 - International Conference on Computational Intelligence, Data Science and Cloud Computing",
     description: "Join IEM ICDC 2026 - International Conference on Computational Intelligence, Data Science and Cloud Computing, March 16-18, 2026 in Kolkata. Bringing together researchers, industry experts, and innovators from around the world.",
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     google: "google-site-verification-code-here", // Replace with actual verification code
   },
   alternates: {
-    canonical: "https://iemicdc2026.com",
+    canonical: "https://www.iemicdc.org",
   },
   category: "education",
   classification: "Academic Conference",

@@ -31,7 +31,7 @@ export default function StructuredData() {
       "@type": "Organization",
       "name": "Institute of Engineering & Management, Kolkata",
       "url": "https://iem.edu.in",
-      "logo": "https://iemicdc2026.com/images/iem-logo.png",
+      "logo": "https://www.iemicdc.org/images/iem-logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+91 9674032480",
@@ -42,7 +42,7 @@ export default function StructuredData() {
     "offers": {
       "@type": "Offer",
       "name": "Conference Registration",
-      "url": "https://iemicdc2026.com/registrations",
+      "url": "https://www.iemicdc.org/registrations",
       "price": "0",
       "priceCurrency": "INR",
       "validFrom": "2025-01-01T00:00:00+05:30",
@@ -77,14 +77,14 @@ export default function StructuredData() {
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://iemicdc2026.com"
+      "@id": "https://www.iemicdc.org"
     },
     "image": [
-      "https://iemicdc2026.com/images/iem.jpeg",
-      "https://iemicdc2026.com/images/logo3.png",
-      "https://iemicdc2026.com/images/venue.jpg"
+      "https://www.iemicdc.org/images/iem.jpeg",
+      "https://www.iemicdc.org/images/logo3.png",
+      "https://www.iemicdc.org/images/venue.jpg"
     ],
-    "url": "https://iemicdc2026.com",
+    "url": "https://www.iemicdc.org",
     "sameAs": [
       "https://iem.edu.in",
       "https://facebook.com/iemkolkata",
@@ -99,7 +99,7 @@ export default function StructuredData() {
     "name": "Institute of Engineering & Management, Kolkata",
     "alternateName": "IEM Kolkata",
     "url": "https://iem.edu.in",
-    "logo": "https://iemicdc2026.com/images/iem-logo.png",
+    "logo": "https://www.iemicdc.org/images/iem-logo.png",
     "foundingDate": "1989",
     "address": {
       "@type": "PostalAddress",
@@ -128,12 +128,12 @@ export default function StructuredData() {
     "@type": "WebSite",
     "name": "IEM ICDC 2026",
     "alternateName": "International Conference on Computational Intelligence, Data Science and Cloud Computing",
-    "url": "https://iemicdc2026.com",
+    "url": "https://www.iemicdc.org",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://iemicdc2026.com/search?q={search_term_string}"
+        "urlTemplate": "https://www.iemicdc.org/search?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
