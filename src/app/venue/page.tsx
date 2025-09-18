@@ -250,7 +250,7 @@ export default function Venue() {
               <h4 className="font-semibold text-white mb-4">How to Reach</h4>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-sm text-gray-300">
-                  <Train className="w-4 h-4 text-blue-400" />
+                  <Train className="w-4 h-4 text-red-400" />
                   <span>Salt Lake Sector V Metro Station (10 mins walk)</span>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-gray-300">

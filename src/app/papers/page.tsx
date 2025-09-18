@@ -37,8 +37,8 @@ const getTrackIcon = (trackNumber: number) => {
 
 const getTrackColor = (trackNumber: number) => {
   switch (trackNumber) {
-    case 1: return "from-blue-500 to-blue-600";
-    case 2: return "from-red-500 to-red-600";
+    case 1: return "from-red-500 to-red-600";
+    case 2: return "from-pink-500 to-pink-600";
     case 3: return "from-green-500 to-green-600";
     case 4: return "from-purple-500 to-purple-600";
     default: return "from-gray-500 to-gray-600";
@@ -129,10 +129,10 @@ export default function Papers() {
             <p className="text-red-100">Outstanding papers will be recognized with prestigious awards</p>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
             <FileText className="w-12 h-12 mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-2">10 Pages Preferably</h3>
-            <p className="text-blue-100">Full papers preferred. No short papers accepted</p>
+            <p className="text-red-100">Full papers preferred. No short papers accepted</p>
           </div>
           
           <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">

@@ -200,7 +200,7 @@ export default function Registration() {
             <BankDetails
               title="Indian Payments (INR)"
               icon={<CreditCard className="w-6 h-6" />}
-              headerColor="from-blue-500 to-blue-600"
+              headerColor="from-red-500 to-red-600"
               datas={[
                 { col1: "In the Favour of", col2: "Institute of Engineering and Management Trust" },
                 { col1: "Bank Name", col2: "IDBI Bank" },

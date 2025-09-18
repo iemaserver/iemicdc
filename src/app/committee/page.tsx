@@ -8,7 +8,7 @@ const getCommitteeIcon = (title: string) => {
     return <Crown className="w-6 h-6 text-red-600" />;
   }
   if (title.toLowerCase().includes('advisory')) {
-    return <Star className="w-6 h-6 text-blue-600" />;
+    return <Star className="w-6 h-6 text-red-600" />;
   }
   if (title.toLowerCase().includes('program')) {
     return <Award className="w-6 h-6 text-green-600" />;
@@ -218,11 +218,11 @@ export default async function Committee() {
               <div className="text-2xl md:text-3xl font-bold">{committeeEntries.length}</div>
               <div className="text-red-100 text-sm mt-1">Committees</div>
             </div>
-            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white text-center shadow-lg">
+            <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white text-center shadow-lg">
               <div className="text-2xl md:text-3xl font-bold">
                 {Object.values(data.Committees).flat().length}
               </div>
-              <div className="text-blue-100 text-sm mt-1">Total Members</div>
+              <div className="text-red-100 text-sm mt-1">Total Members</div>
             </div>
             <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 text-white text-center shadow-lg">
               <div className="text-2xl md:text-3xl font-bold">3</div>

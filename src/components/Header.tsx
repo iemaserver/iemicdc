@@ -54,6 +54,12 @@ const menuData: MenuItem[] = [
     title: "Venue",
     path: "/venue",
     newTab: false,
+  },
+  {
+    id: 8,
+    title: "IEM-ICDC 2025",
+    path: "https://2025.iemicdc.org",
+    newTab: true,
   }
 ];
 
@@ -154,17 +160,28 @@ const Header = () => {
             >
               {menuData.map((menuItem, index) => (
                 <li key={index}>
-                  <Link
-                    href={menuItem.path ?? "#"}
-                    onClick={() => setNavbarOpen(false)}
-                    className={`block py-2 px-3 text-[1.08rem] font-medium transition lg:text-center ${pathname === menuItem.path
-                        ? "text-[#f74a7e]"
-                        : "text-gray-700 hover:text-[#4A6CF7]"
-                      }`}
-
-                  >
-                    {menuItem.title}
-                  </Link>
+                  {menuItem.newTab ? (
+                    <a
+                      href={menuItem.path ?? "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setNavbarOpen(false)}
+                      className="block py-2 px-3 text-[1.08rem] font-medium transition lg:text-center text-gray-700 hover:text-[#f74a5e]"
+                    >
+                      {menuItem.title}
+                    </a>
+                  ) : (
+                    <Link
+                      href={menuItem.path ?? "#"}
+                      onClick={() => setNavbarOpen(false)}
+                      className={`block py-2 px-3 text-[1.08rem] font-medium transition lg:text-center ${pathname === menuItem.path
+                          ? "text-[#f74a7e]"
+                          : "text-gray-700 hover:text-[#f74a5e]"
+                        }`}
+                    >
+                      {menuItem.title}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

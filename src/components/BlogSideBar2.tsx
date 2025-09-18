@@ -68,7 +68,7 @@ const BlogSidebar2 = ({ onSelect }: { onSelect: (blog: "blog1" | "blog2" | "blog
               <ul>
                 <li
                   onClick={() => onSelect("blog1")}
-                  className="border-b border-gray-100 cursor-pointer transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg rounded-lg hover:bg-blue-50"
+                  className="border-b border-gray-100 cursor-pointer transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg rounded-lg hover:bg-red-50"
                 >
                   <RelatedPost
                     title="IEM ICDC 2026"
@@ -97,7 +97,7 @@ const BlogSidebar2 = ({ onSelect }: { onSelect: (blog: "blog1" | "blog2" | "blog
             {/* References */}
             <div className="bg-white border border-gray-200 rounded-xl shadow-md p-6">
               <h3 className="text-lg font-semibold text-gray-800 mb-4">Reference Links</h3>
-              <ul className="list-disc list-inside text-blue-600 text-sm space-y-2">
+              <ul className="list-disc list-inside text-red-600 text-sm space-y-2">
                 <li><Link href="https://iem.edu.in/" target="_blank">IEM Official Website</Link></li>
                 <li><Link href="http://ieee-iemcon.org/" target="_blank">IEEE IEMCON</Link></li>
                 <li><Link href="http://ieee-uemcon.org/" target="_blank">IEEE UEMCON</Link></li>

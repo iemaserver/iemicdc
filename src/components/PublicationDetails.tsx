@@ -4,7 +4,7 @@ import React from 'react';
 const PublicationDetails = () => {
   return (
     <div className="flex items-center justify-center w-[80%]">
-      <div className="bg-blue-50 w-full p-8 rounded-lg shadow-md text-center">
+      <div className="bg-red-50 w-full p-8 rounded-lg shadow-md text-center">
         <h1 className="text-xl font-semibold text-teal-800 mb-6">
           PUBLICATION & INDEXING DETAILS:
         </h1>

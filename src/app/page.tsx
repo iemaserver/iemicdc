@@ -188,7 +188,7 @@ export default function Home() {
           <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
             <div className="relative">
               <Image src="/images/S4.png" width={120} height={120} alt="Prof. Michael Hinchey" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="text-center">
               <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Prof. Michael Hinchey</h3>
@@ -202,7 +202,7 @@ export default function Home() {
           <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
             <div className="relative">
               <Image src="/images/S1.png" width={120} height={120} alt="Dr. Michael Sheng" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="text-center">
               <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Dr. Michael Sheng</h3>
@@ -216,7 +216,7 @@ export default function Home() {
           <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1">
             <div className="relative">
               <Image src="/images/S2.png" width={120} height={120} alt="Prof. Amlan Chakrabarti" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="text-center">
               <h3 className="font-bold text-primary text-lg mb-2">Prof. Amlan Chakrabarti</h3>
@@ -230,7 +230,7 @@ export default function Home() {
           <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
             <div className="relative">
               <Image src="/images/S3.png" width={120} height={120} alt="Dr. Indranil Mitra" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="text-center">
               <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Dr. Indranil Mitra</h3>
@@ -244,7 +244,7 @@ export default function Home() {
           <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
             <div className="relative">
               <Image src="/images/S5.png" width={120} height={120} alt="Dr. Anbuthambi Bhojarajan" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="text-center">
               <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Dr. Anbuthambi Bhojarajan</h3>
@@ -257,14 +257,14 @@ export default function Home() {
           <div className="group flex flex-col items-center justify-start gap-4 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 hover-lift hover:shadow-xl transition-all duration-300">
             <div className="relative">
               <Image src="/images/S6.png" width={120} height={120} alt="Prof. Treena Basu" className="rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-blue-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="text-center">
               <h3 className="font-bold text-primary text-lg md:text-xl mb-3">Prof. Treena Basu</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Associate Professor, Department of Mathematics, Occidental College, Los Angeles.
                 <br />
-                <Link href={"https://www.oxy.edu"} className="text-blue-500 hover:underline">https://www.oxy.edu</Link>
+                <Link href={"https://www.oxy.edu"} className="text-red-500 hover:underline">https://www.oxy.edu</Link>
               </p>
             </div>
           </div>

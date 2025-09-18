@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://iemicdc2026.com/sitemap.xml
+Sitemap: https://iemicdc.org/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
@@ -40,4 +40,4 @@ User-agent: Slurp
 Allow: /
 
 # Host directive (when domain is finalized)
-# Host: https://iemicdc2026.com
+# Host: https://iemicdc.org
