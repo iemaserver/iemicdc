@@ -143,7 +143,7 @@ export default function Papers() {
         </div>
 
         {/* Important Notice */}
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-3xl">
           <div className="bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-8 text-white text-center shadow-xl">
             <Calendar className="w-16 h-16 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-4">Submission Guidelines</h3>

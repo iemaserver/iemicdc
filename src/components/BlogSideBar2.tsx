@@ -72,7 +72,7 @@ const BlogSidebar2 = ({ onSelect }: { onSelect: (blog: "blog1" | "blog2" | "blog
                 >
                   <RelatedPost
                     title="IEM ICDC 2026"
-                    image="/images/logo.png"
+                    image="/images/logo-big.png"
                     slug="#"
                   />
                 </li>

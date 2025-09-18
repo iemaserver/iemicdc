@@ -1,177 +1,202 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
-const pages = [
+type MenuItem = {
+  id: number;
+  title: string;
+  path?: string;
+  newTab: boolean;
+};
+
+const menuData: MenuItem[] = [
   {
-    name: "Home",
+    id: 1,
+    title: "Home",
     path: "/",
+    newTab: false,
   },
   {
-    name: "About",
+    id: 2,
+    title: "About",
     path: "/about",
+    newTab: false,
   },
   {
-    name: "Tracks",
+    id: 3,
+    title: "Tracks",
     path: "/papers",
+    newTab: false,
   },
   {
-    name: "Speakers",
+    id: 4,
+    title: "Speakers",
     path: "/speakers",
+    newTab: false,
   },
   {
-    name: "Committee",
+    id: 5,
+    title: "Committee",
     path: "/committee",
+    newTab: false,
   },
   {
-    name: "Registration",
+    id: 6,
+    title: "Registration",
     path: "/registrations",
+    newTab: false,
   },
   {
-    name: "Venue",
+    id: 7,
+    title: "Venue",
     path: "/venue",
+    newTab: false,
   }
 ];
 
-export const Header = () => {
-  const [menu, setMenu] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const pathName = usePathname();
-  const router = useRouter();
+const Header = () => {
+  const menuRef = useRef<HTMLUListElement>(null);
+
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [sticky, setSticky] = useState(false);
+  const pathname = usePathname();
+
+  const toggleBarColor = "bg-[--primary]";
+
+  const handleStickyNavbar = () => {
+    setSticky(window.scrollY >= 80);
+  };
 
   useEffect(() => {
-    setMenu(false);
-  }, [pathName]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      setScrolled(isScrolled);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleStickyNavbar);
+    return () => window.removeEventListener("scroll", handleStickyNavbar);
   }, []);
 
+  const navbarToggleHandler = () => setNavbarOpen(!navbarOpen);
+
   return (
-    <>
-      <header className={`w-full h-16 fixed z-[100] top-0 left-0 flex items-center justify-between px-4 md:px-6 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white border-b border-gray-300 shadow-lg backdrop-blur-sm' 
-          : 'bg-white/98 border-b border-gray-200 shadow-md backdrop-blur-sm'
-      }`}>
-        <div className="flex items-center justify-start hover-scale">
-          <Image
-            src={"/images/logo.png"}
-            width={60}
-            height={60}
-            alt="IEM ICDC 2026 Logo"
-            className="cursor-pointer w-[50px] h-[50px] object-contain hover-opacity smooth-transition"
-            onClick={() => router.push("/")}
-          />
-        </div>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 flex-1 justify-center max-w-4xl">
-          {pages.map((page, index) => (
-            <div
-              key={page.name}
-              onClick={() => router.push(page.path)}
-              className={`px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium smooth-transition cursor-pointer hover-scale relative whitespace-nowrap ${
-                pathName === page.path 
-                  ? "text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:rounded-full" 
-                  : "text-gray-700 hover:text-primary"
-              }`}
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
-              {page.name}
-            </div>
-          ))}
-        </nav>
-
-        {/* Partner Logos - Desktop */}
-        <div className="hidden xl:flex items-center justify-end gap-2 flex-shrink-0">
-          <Image
-            src={"/images/iem-logo.png"}
-            width={50}
-            height={25}
-            alt="IEM Logo"
-            className="cursor-pointer hover:opacity-80 transition-opacity duration-200 object-contain h-6"
-            onClick={() => window.open("https://iem.edu.in/", "_blank")}
-          />
-          <Image
-            src={"/images/uem-logo.png"}
-            width={50}
-            height={25}
-            alt="UEM Logo"
-            className="cursor-pointer hover:opacity-80 transition-opacity duration-200 object-contain h-6"
-            onClick={() => window.open("https://uem.edu.in/", "_blank")}
-          />
-        </div>
-
-        {/* Mobile menu button */}
-        <div className="lg:hidden flex-shrink-0">
-          <button
-            onClick={() => setMenu(!menu)}
-            className="p-2 rounded-md hover:bg-gray-100 transition-colors"
-          >
-            {menu ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
-      </header>
-
-      {/* Mobile Navigation */}
-      {menu && (
-        <>
-          {/* Backdrop */}
-          <div 
-            className="lg:hidden fixed inset-0 bg-black/20 z-[98]"
-            onClick={() => setMenu(false)}
-          />
-          <nav className="lg:hidden fixed top-16 left-0 w-full bg-white backdrop-blur-sm border-b border-gray-300 z-[99] shadow-lg">
-            <div className="px-4 py-4 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto bg-white">
-              {pages.map((page) => (
-                <div
-                  key={page.name}
-                  onClick={() => {
-                    router.push(page.path);
-                    setMenu(false);
-                  }}
-                  className={`block px-3 py-2 text-sm font-medium smooth-transition cursor-pointer rounded-md ${
-                    pathName === page.path ? "text-primary font-semibold bg-red-50" : "text-gray-700 hover:bg-gray-50"
-                  }`}
-                >
-                  {page.name}
-                </div>
-              ))}
-            
-            {/* Partner Logos - Mobile */}
-            <div className="flex items-center justify-start gap-4 pt-4 border-t border-gray-200 mt-4">
+    <div>
+      <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+        <div className="w-full max-w-screen-2xl mx-auto flex flex-wrap items-center justify-between lg:justify-around px-2 py-2 md:py-2 lg:flex-nowrap gap-y-2 min-w-0 overflow-visible relative">
+          {/* Left Logos */}
+          <div className="flex items-center lg:gap-6 xl:gap-10 gap-1 sm:gap-0 lg:pr-2">
+            <Link href="/" className="flex items-center xl:gap-4 lg-gap-2">
               <Image
-                src={"/images/iem-logo.png"}
-                width={40}
-                height={20}
-                alt="IEM Logo"
-                className="cursor-pointer hover:opacity-80 transition-opacity duration-200 object-contain h-5"
-                onClick={() => window.open("https://iem.edu.in/", "_blank")}
+                src="/images/logo-no-bg.png"
+                alt="IEM ICDC Logo"
+                width={1500}
+                height={1500}
+                priority
+                quality={100}
+                className="h-[11vh] lg:h-[13vh] w-auto max-w-[9rem] md:max-w-[10rem] lg:max-w-[10rem] xl:max-w-[14rem] object-contain"
               />
-              <Image
-                src={"/images/uem-logo.png"}
-                width={40}
-                height={20}
-                alt="UEM Logo"
-                className="cursor-pointer hover:opacity-80 transition-opacity duration-200 object-contain h-5"
-                onClick={() => window.open("https://uem.edu.in/", "_blank")}
-              />
+            </Link>
+
+            {/* IEM & UEM logos on small/medium */}
+            <div className="flex lg:hidden items-center gap-1 sm:gap-1 pl-1 flex-shrink-0">
+              <>
+                <Image
+                  src="/images/iem-logo.png"
+                  alt="IEM Logo"
+                  width={1500}
+                  height={1003}
+                  quality={100}
+                  priority
+                  className="h-[7vh] sm:h-[7vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
+                />
+                <Image
+                  src="/images/uem-logo.png"
+                  alt="UEM Logo"
+                  width={1500}
+                  height={1003}
+                  quality={100}
+                  priority
+                  className="h-[7vh] sm:h-[7vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
+                />
+              </>
             </div>
           </div>
-        </nav>
-        </>
-      )}
-    </>
+
+          {/* Navbar toggle (Mobile) */}
+          <div className="lg:hidden ml-auto pl-1">
+            <button
+              onClick={navbarToggleHandler}
+              className="block rounded p-2 focus:outline-none focus:ring-2 focus:ring-[#f74a5e]"
+            >
+              <span
+                className={`block h-0.5 w-6 ${toggleBarColor} transition-transform ${navbarOpen ? "rotate-45 translate-y-1.5" : ""
+                  }`}
+              />
+              <span
+                className={`block h-0.5 w-6 ${toggleBarColor} my-1 transition-opacity ${navbarOpen ? "opacity-0" : ""
+                  }`}
+              />
+              <span
+                className={`block h-0.5 w-6 ${toggleBarColor} transition-transform ${navbarOpen ? "-rotate-45 -translate-y-1.5" : ""
+                  }`}
+              />
+            </button>
+          </div>
+
+          {/* Navigation (No Submenu) */}
+          <nav
+            className={`w-full transition-all duration-300 ease-in-out ${navbarOpen
+                ? "block bg-gray-50 mt-4 p-4 rounded-md shadow-md lg:bg-transparent"
+                : "hidden lg:block"
+              } lg:w-auto lg:p-0`}
+          >
+            <ul
+              ref={menuRef}
+              className="flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-2 xl:gap-4 lg:space-x-1 lg:mr-2"
+            >
+              {menuData.map((menuItem, index) => (
+                <li key={index}>
+                  <Link
+                    href={menuItem.path ?? "#"}
+                    onClick={() => setNavbarOpen(false)}
+                    className={`block py-2 px-3 text-[1.08rem] font-medium transition lg:text-center ${pathname === menuItem.path
+                        ? "text-[#f74a7e]"
+                        : "text-gray-700 hover:text-[#4A6CF7]"
+                      }`}
+
+                  >
+                    {menuItem.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Right Logos on large screens */}
+          <div className="hidden lg:flex items-center gap-1 xl:gap-3 min-w-0 flex-shrink justify-end">
+            <>
+              <Image
+                src="/images/iem-logo.png"
+                alt="IEM Logo"
+                width={1500}
+                height={1003}
+                quality={100}
+                priority
+                className="h-[8vh] lg:h-[9vh] xl:h-[10vh] w-auto object-contain max-w-[7rem] lg:max-w-[8rem]"
+              />
+              <Image
+                src="/images/uem-logo.png"
+                alt="UEM Logo"
+                width={1500}
+                height={1003}
+                quality={100}
+                priority
+                className="h-[8vh] lg:h-[9vh] xl:h-[10vh] w-auto object-contain max-w-[7rem] lg:max-w-[8rem]"
+              />
+            </>
+          </div>
+        </div>
+      </header>
+    </div>
   );
 };
+
+export default Header;
