@@ -1,6 +1,28 @@
 import { Container } from "@/components/Container";
 import { CopyButton } from "@/components/CopyButton";
 import { CreditCard, DollarSign, FileText, Users, Clock, Shield } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Conference Registration - Fees & Payment",
+  description: "Register for IEM ICDC 2026 International Conference. Check registration fees for students, faculty, and industry professionals. Learn about payment methods and registration deadlines.",
+  keywords: [
+    "Conference Registration",
+    "Registration Fees",
+    "Payment Methods",
+    "Early Bird Registration",
+    "Student Registration",
+    "Faculty Registration",
+    "Industry Registration",
+    "Conference Payment",
+    "Registration Deadline"
+  ],
+  openGraph: {
+    title: "Conference Registration - IEM ICDC 2026",
+    description: "Register for IEM ICDC 2026 International Conference. Check registration fees and payment methods.",
+    images: ["/images/QR.jpeg"],
+  },
+};
 
 const ModernTable = ({
   title,
@@ -26,26 +48,46 @@ const ModernTable = ({
       <div className="overflow-x-auto">
         <table className="w-full">
           <tbody>
-            {datas.map(({ col1, col2, className }, id) => (
-              <tr key={id} className="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200">
-                <td className={`px-6 py-4 font-medium text-gray-700 ${className || ""}`}>
-                  {col1}
-                </td>
-                <td className="px-6 py-4 text-gray-800 font-semibold">
-                  {col2 && (
-                    <span className="bg-gradient-to-r from-red-100 to-red-50 text-red-700 px-3 py-1 rounded-full text-sm">
-                      {col2}
-                    </span>
-                  )}
-                </td>
-              </tr>
-            ))}
+            {datas.map(({ col1, col2, className }, id) => {
+              const isTotalRow = !col2 || col2.trim() === "";
+              return (
+                <tr
+                  key={id}
+                  className={`border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 ${
+                    isTotalRow ? "font-extrabold text-gray-800 bg-gray-100" : ""
+                  }`}
+                >
+                  <td
+                    className={`px-6 py-4 font-medium text-gray-700 text-xl ${
+                      className || ""
+                    }`}
+                  >
+                    {col1}
+                  </td>
+                  <td
+                    className={`px-6 py-4 ${
+                      isTotalRow
+                        ? "font-extrabold text-gray-800"
+                        : "text-gray-800 font-semibold text-lg"
+                    }`}
+                  >
+                    {col2 &&
+                      !isTotalRow && (
+                        <span className="bg-gradient-to-r from-red-100 to-red-50 text-red-700 px-3 py-1 rounded-full text-base">
+                          {col2}
+                        </span>
+                      )}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
     </div>
   );
 };
+
 
 const BankDetails = ({ title, icon, datas, headerColor }: {
   title: string;
@@ -104,15 +146,15 @@ export default function Registration() {
         
         {/* Registration Categories Overview */}
         <div className="w-full max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Registration Categories</h2>
+          <div className="text-center mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Registration Details</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            {/* <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Choose the registration category that best fits your profile and enjoy our competitive rates
-            </p>
+            </p> */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {registrationCategories.map((category, index) => (
               <div key={index} className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="text-red-600 mb-4 flex justify-center">
@@ -123,11 +165,11 @@ export default function Registration() {
                 <p className="text-gray-600 text-sm">{category.description}</p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Detailed Registration Fees */}
-        <div className="w-full max-w-6xl">
+        <div className="w-full max-w-5xl">
           <ModernTable
             title="Registration Fees per Accepted Paper"
             icon={<FileText className="w-6 h-6" />}
@@ -137,10 +179,10 @@ export default function Registration() {
               { col1: "Indian Researcher", col2: "₹9,000" },
               { col1: "Indian Author from Industry", col2: "₹10,000" },
               { col1: "Foreign Author", col2: "$250" },
-              { col1: "Extra Page Charges (above 10 pages)", col2: "", className: "font-bold text-gray-800 bg-gray-100" },
+              { col1: "Extra Page Charges (above 10 pages)", col2: "", className: "font-extrabold text-gray-800 bg-gray-100" },
               { col1: "Indian Author (per extra page)", col2: "₹400" },
               { col1: "Foreign Author (per extra page)", col2: "$50" },
-              { col1: "Participation Only (non-authors)", col2: "", className: "font-bold text-gray-800 bg-gray-100" },
+              { col1: "Participation Only (non-authors)", col2: "", className: "font-extrabold text-gray-800 bg-gray-100" },
               { col1: "Indian Participant", col2: "₹3,000" },
               { col1: "Foreign Participant", col2: "$100" },
             ]}
@@ -158,7 +200,7 @@ export default function Registration() {
             <BankDetails
               title="Indian Payments (INR)"
               icon={<CreditCard className="w-6 h-6" />}
-              headerColor="from-blue-500 to-blue-600"
+              headerColor="from-red-500 to-red-600"
               datas={[
                 { col1: "In the Favour of", col2: "Institute of Engineering and Management Trust" },
                 { col1: "Bank Name", col2: "IDBI Bank" },
@@ -190,7 +232,6 @@ export default function Registration() {
             <h3 className="text-2xl font-bold mb-4">Important Registration Notes</h3>
             <div className="space-y-3 text-orange-100">
               <p>✅ Registration is mandatory for all accepted papers</p>
-              <p>✅ Early bird discounts available until February 15, 2026</p>
               <p>✅ Certificate and conference kit included with registration</p>
               <p>✅ Payments should be made as per the accepted paper category</p>
             </div>
@@ -198,7 +239,7 @@ export default function Registration() {
         </div>
 
         {/* Call to Action */}
-        <div className="w-full max-w-4xl">
+        {/* <div className="w-full max-w-4xl">
           <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl shadow-xl p-8 md:p-12 text-white text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Register?</h3>
             <p className="text-red-100 mb-8 text-lg">
@@ -212,14 +253,14 @@ export default function Registration() {
                 Submit Paper First
               </a>
               <a 
-                href="mailto:contact@iemicdc2026.com" 
+                href="mailto:icdc@iem.edu.in" 
                 className="bg-red-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Contact for Registration
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </Container>
     </>

@@ -1,145 +1,130 @@
 import { Container } from "@/components/Container";
-import Image from "next/image";
-import { Calendar, Clock, MapPin, Users, Download, ExternalLink } from "lucide-react";
+import { Calendar, Clock, MapPin } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Conference Schedule - Coming Soon",
+  description: "The detailed conference schedule for IEM ICDC 2026 will be announced soon. Stay tuned for the complete program including keynote sessions, paper presentations, and workshops.",
+  keywords: [
+    "Conference Schedule",
+    "Program Schedule", 
+    "IEM ICDC 2026 Schedule",
+    "Conference Timeline",
+    "Coming Soon"
+  ],
+  openGraph: {
+    title: "Conference Schedule - Coming Soon - IEM ICDC 2026",
+    description: "The detailed conference schedule for IEM ICDC 2026 will be announced soon.",
+  },
+};
 
 export default function Schedule() {
-    const scheduleImages = [
-        { src: "/images/schedule1.jpg", title: "Day 1 - Opening & Keynotes", day: "March 16, 2026" },
-        { src: "/images/schedule2.jpg", title: "Day 1 - Technical Sessions", day: "March 16, 2026" },
-        { src: "/images/schedule3.jpg", title: "Day 2 - Research Presentations", day: "March 17, 2026" },
-        { src: "/images/schedule4.jpg", title: "Day 2 - Workshops & Panels", day: "March 17, 2026" },
-        { src: "/images/schedule5.jpg", title: "Day 3 - Awards & Closing", day: "March 18, 2026" },
-    ];
-
-    const keyInfo = [
-        { icon: <Calendar className="w-6 h-6" />, label: "Duration", value: "3 Days" },
-        { icon: <Clock className="w-6 h-6" />, label: "Daily Hours", value: "9 AM - 6 PM" },
-        { icon: <MapPin className="w-6 h-6" />, label: "Venue", value: "STPI Kolkata" },
-        { icon: <Users className="w-6 h-6" />, label: "Expected", value: "200+ Participants" },
-    ];
-
     return (
         <>
             {/* Hero Section */}
             <div className="bg-gradient-to-br from-red-600 via-red-700 to-black text-white py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-4 text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">Schedule</h1>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6">Conference Schedule</h1>
                     <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                        Complete program schedule for IEM ICDC 2026 - March 16-18, 2026
+                        Detailed program schedule coming soon - March 16-18, 2026
                     </p>
                 </div>
             </div>
 
             <Container className="flex flex-col items-center justify-start gap-12 py-12 mt-12">
                 
-                {/* Key Information */}
-                <div className="w-full max-w-6xl">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {keyInfo.map((info, index) => (
-                            <div key={index} className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 text-center shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                                <div className="text-red-600 mb-3 flex justify-center">
-                                    {info.icon}
-                                </div>
-                                <div className="text-sm text-gray-600 mb-1">{info.label}</div>
-                                <div className="text-lg font-bold text-gray-800">{info.value}</div>
+                {/* Coming Soon Message */}
+                <div className="text-center space-y-8 max-w-4xl">
+                    <div className="bg-white rounded-2xl shadow-xl p-12 border border-gray-100">
+                        <div className="flex justify-center mb-8">
+                            <div className="bg-gradient-to-br from-red-100 to-red-50 p-6 rounded-full">
+                                <Calendar className="w-16 h-16 text-red-600" />
                             </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Schedule Overview */}
-                <div className="w-full max-w-4xl">
-                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-white text-center shadow-xl">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-4">Three Days of Innovation</h2>
-                        <div className="w-20 h-1 bg-white/40 mx-auto rounded-full mb-6"></div>
-                        <p className="text-blue-100 text-lg leading-relaxed max-w-3xl mx-auto">
-                            Join us for an intensive three-day program featuring keynote speeches, technical sessions, 
-                            research presentations, workshops, and networking opportunities with leading experts in the field.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
-                                <Download className="w-5 h-5" />
-                                <span>Download Schedule</span>
-                            </button>
-                            <button className="bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
-                                <ExternalLink className="w-5 h-5" />
-                                <span>View Online</span>
-                            </button>
                         </div>
-                    </div>
-                </div>
-
-                {/* Schedule Images */}
-                <div className="w-full max-w-7xl">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Detailed Program</h2>
-                        <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full mb-6"></div>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            Explore the comprehensive schedule for each day of the conference, 
-                            including all sessions, workshops, and special events.
+                        
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                            Schedule Coming Soon
+                        </h2>
+                        
+                        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                            We are currently finalizing the detailed conference schedule including keynote sessions, 
+                            technical paper presentations, workshops, and networking events. The complete program 
+                            will be announced soon.
                         </p>
-                    </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {scheduleImages.map((schedule, index) => (
-                            <div key={index} className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                                {/* Header */}
-                                <div className="bg-gradient-to-r from-gray-800 to-black p-6 text-white">
-                                    <h3 className="text-xl font-bold mb-2">{schedule.title}</h3>
-                                    <p className="text-gray-300 flex items-center space-x-2">
-                                        <Calendar className="w-4 h-4" />
-                                        <span>{schedule.day}</span>
-                                    </p>
+                        {/* Key Information */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200">
+                                <div className="flex items-center justify-center mb-4">
+                                    <Calendar className="w-8 h-8 text-red-600" />
                                 </div>
-                                
-                                {/* Image */}
-                                <div className="relative group">
-                                    <Image 
-                                        src={schedule.src} 
-                                        width={800} 
-                                        height={600} 
-                                        alt={schedule.title}
-                                        className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-300"
-                                    />
-                                    
-                                    {/* Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-                                        <button className="bg-white text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center space-x-2">
-                                            <ExternalLink className="w-4 h-4" />
-                                            <span>View Details</span>
-                                        </button>
-                                    </div>
-                                </div>
+                                <div className="text-sm text-gray-600 mb-1">Conference Dates</div>
+                                <div className="text-lg font-bold text-gray-800">March 16-18, 2026</div>
                             </div>
-                        ))}
+                            
+                            <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200">
+                                <div className="flex items-center justify-center mb-4">
+                                    <Clock className="w-8 h-8 text-red-600" />
+                                </div>
+                                <div className="text-sm text-gray-600 mb-1">Duration</div>
+                                <div className="text-lg font-bold text-gray-800">3 Days</div>
+                            </div>
+                            
+                            <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border border-gray-200">
+                                <div className="flex items-center justify-center mb-4">
+                                    <MapPin className="w-8 h-8 text-red-600" />
+                                </div>
+                                <div className="text-sm text-gray-600 mb-1">Location</div>
+                                <div className="text-lg font-bold text-gray-800">Kolkata, India</div>
+                            </div>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-xl border border-red-200">
+                            <h3 className="text-xl font-bold text-gray-800 mb-3">What to Expect</h3>
+                            <ul className="text-gray-600 space-y-2 text-left">
+                                <li className="flex items-start">
+                                    <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    Keynote presentations by industry leaders
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    Technical paper presentation sessions
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    Interactive workshops and panel discussions
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    Networking sessions and exhibition
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 {/* Call to Action */}
-                <div className="w-full max-w-4xl">
-                    <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl shadow-xl p-8 md:p-12 text-white text-center">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4">Don&apos;t Miss Out!</h3>
-                        <p className="text-red-100 mb-8 text-lg">
-                            Register now to secure your spot at this premier conference
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a 
-                                href="/registrations" 
-                                className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
-                            >
-                                Register Now
-                            </a>
-                            <a 
-                                href="/venue" 
-                                className="bg-red-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-all duration-300 shadow-lg hover:shadow-xl"
-                            >
-                                View Venue
-                            </a>
-                        </div>
+                {/* <div className="text-center space-y-6">
+                    <p className="text-gray-600 text-lg">
+                        Stay updated with the latest conference information
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a 
+                            href="/papers" 
+                            className="bg-gradient-to-r from-red-600 to-red-500 text-white px-8 py-3 rounded-lg font-semibold hover:from-red-700 hover:to-red-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        >
+                            Submit Your Paper
+                        </a>
+                        <a 
+                            href="/registrations" 
+                            className="bg-white text-red-600 border-2 border-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        >
+                            Register Now
+                        </a>
                     </div>
-                </div>
+                </div> */}
 
             </Container>
         </>
-    )
+    );
 }

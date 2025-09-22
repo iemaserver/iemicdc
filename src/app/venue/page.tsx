@@ -70,7 +70,7 @@ export default function Venue() {
             </div>
 
             {/* Call to Action */}
-            <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-8 text-white">
+            {/* <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-8 text-white">
               <h3 className="text-xl font-bold mb-4">Want to Stay Updated?</h3>
               <p className="text-red-100 mb-6">
                 Register now and be the first to know about venue details and other conference updates
@@ -89,7 +89,7 @@ export default function Venue() {
                   Submit Paper
                 </a>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function Venue() {
   ];
 
   const contactInfo = [
-    { icon: <Phone className="w-5 h-5" />, label: "Phone", value: "033 2367 3598" },
+    { icon: <Phone className="w-5 h-5" />, label: "Phone", value: "+91 9674032480" },
     { icon: <MapPin className="w-5 h-5" />, label: "Address", value: "Plot No- 5/1, Salt Lake Bypass, DP Block, Sector V, Bidhannagar, Kolkata, West Bengal 700091" },
     { icon: <Clock className="w-5 h-5" />, label: "Conference Hours", value: "9:00 AM - 6:00 PM (All 3 Days)" },
   ];
@@ -250,7 +250,7 @@ export default function Venue() {
               <h4 className="font-semibold text-white mb-4">How to Reach</h4>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-sm text-gray-300">
-                  <Train className="w-4 h-4 text-blue-400" />
+                  <Train className="w-4 h-4 text-red-400" />
                   <span>Salt Lake Sector V Metro Station (10 mins walk)</span>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-gray-300">
@@ -279,12 +279,6 @@ export default function Venue() {
                 className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Register Now
-              </a>
-              <a 
-                href="/schedule" 
-                className="bg-red-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                View Schedule
               </a>
             </div>
           </div>

@@ -12,7 +12,7 @@ export default function NotFound() {
                 className='md:text-6xl text-3xl w-full text-center text-primary font-bold'
                 repeat={false}
             />
-            <Link href={"/"} className='text-blue-500 underline'>Return To Homepage</Link>
+            <Link href={"/"} className='text-red-500 underline'>Return To Homepage</Link>
             </div>
         </Container>
   )

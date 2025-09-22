@@ -96,16 +96,16 @@ export default function Speakers() {
             </div>
 
             {/* Status Cards */}
-            <div className="flex justify-center mb-8">
+            {/* <div className="flex justify-center mb-8">
               <div className="bg-green-50 border border-green-200 rounded-xl p-6 max-w-sm">
                 <Star className="w-8 h-8 text-green-600 mx-auto mb-3" />
                 <h4 className="font-semibold text-green-800 text-lg">Announcements</h4>
                 <p className="text-green-600 mt-2">Coming very soon</p>
               </div>
-            </div>
+            </div> */}
 
             {/* Call to Action */}
-            <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-8 text-white">
+            {/* <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-xl p-8 text-white">
               <Mic className="w-12 h-12 mx-auto mb-4 text-yellow-400" />
               <h3 className="text-xl font-bold mb-4">Be the First to Know</h3>
               <p className="text-red-100 mb-6">
@@ -126,13 +126,13 @@ export default function Speakers() {
                   Submit Your Paper
                 </a>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>
 
         {/* Additional Information */}
-        <div className="w-full max-w-4xl">
+        {/* <div className="w-full max-w-4xl">
           <div className="bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-xl border border-gray-800 text-white p-8 text-center">
             <h3 className="text-2xl font-bold mb-4 text-yellow-400">Why Our Speakers Matter</h3>
             <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
@@ -141,7 +141,7 @@ export default function Speakers() {
               to help attendees advance their research and careers in the digital age.
             </p>
           </div>
-        </div>
+        </div> */}
 
       </Container>
     </>

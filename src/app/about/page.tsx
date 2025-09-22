@@ -1,6 +1,28 @@
 import { Container } from "@/components/Container";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+import BlogChanging from "@/components/BlogChanging";
+
+export const metadata: Metadata = {
+  title: "About the Conference",
+  description: "Learn about IEM ICDC 2026 - International Conference on Computational Intelligence, Data Science and Cloud Computing. Discover our mission, vision, and the exciting research areas we cover in AI, data science, and cloud computing.",
+  keywords: [
+    "About IEM ICDC 2026",
+    "Conference Information",
+    "Research Areas",
+    "Computational Intelligence",
+    "Data Science Conference",
+    "Cloud Computing Research",
+    "AI Conference India",
+    "Academic Research"
+  ],
+  openGraph: {
+    title: "About IEM ICDC 2026 - Conference Details",
+    description: "Learn about IEM ICDC 2026 - International Conference on Computational Intelligence, Data Science and Cloud Computing. Discover our mission, vision, and research areas.",
+    images: ["/images/A1.jpeg"],
+  },
+};
 
 export default function About() {
   return (
@@ -18,10 +40,9 @@ export default function About() {
       <Container className="flex flex-col items-center justify-start gap-16 md:pb-20 pb-10 mt-12">
         
         {/* Host Institute Section */}
-        <div className="w-full max-w-7xl">
+        {/* <div className="w-full max-w-7xl">
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
             <div className="flex md:flex-row flex-col">
-              {/* Content */}
               <div className="flex-1 p-8 md:p-12">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-3">
@@ -40,7 +61,6 @@ export default function About() {
                       IEM is one of the top-ranked engineering colleges in Kolkata and Eastern India which provides the best engineering course with 100% job assistance.
                     </p>
                     
-                    {/* Stats */}
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 pt-6 border-t border-gray-200">
                       <div className="text-center">
                         <div className="text-2xl md:text-3xl font-bold text-red-600">15+</div>
@@ -68,7 +88,6 @@ export default function About() {
                 </div>
               </div>
               
-              {/* Image */}
               <div className="md:w-80 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center p-8">
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-red-200/30 to-red-300/30 rounded-2xl blur-xl"></div>
@@ -83,13 +102,13 @@ export default function About() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+        <BlogChanging/>
 
         {/* Conference Section */}
-        <div className="w-full max-w-7xl">
+        {/* <div className="w-full max-w-7xl">
           <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl shadow-xl border border-gray-800 overflow-hidden text-white">
             <div className="flex md:flex-row-reverse flex-col">
-              {/* Content */}
               <div className="flex-1 p-8 md:p-12">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-3">
@@ -108,7 +127,6 @@ export default function About() {
                       The most substantial new findings about AI and Robotics, Image processing and NLP, Cloud Computing and big data analytics as well as in Cyber security, Blockchain and IoT and various allied fields will be presented in the three-day event.
                     </p>
                     
-                    {/* Conference Features */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 pt-6 border-t border-gray-700">
                       <div className="flex items-center space-x-3">
                         <div className="w-2 h-2 bg-red-500 rounded-full"></div>
@@ -137,7 +155,6 @@ export default function About() {
                 </div>
               </div>
               
-              {/* Image */}
               <div className="md:w-80 bg-gradient-to-br from-red-900/30 to-red-800/30 flex items-center justify-center p-8">
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-red-600/20 rounded-2xl blur-xl"></div>
@@ -152,10 +169,10 @@ export default function About() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Call to Action Section */}
-        <div className="w-full max-w-4xl">
+        {/* <div className="w-full max-w-4xl">
           <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl shadow-xl p-8 md:p-12 text-white text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Join Us?</h3>
             <p className="text-red-100 mb-8 text-lg">
@@ -176,7 +193,7 @@ export default function About() {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </Container>
     </>

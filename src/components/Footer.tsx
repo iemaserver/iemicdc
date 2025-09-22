@@ -30,7 +30,12 @@ export const Footer = () => {
             <div className="space-y-2 text-sm">
               <p className="text-gray-300">Institute of Engineering & Management</p>
               <p className="text-gray-300">March 16-18, 2026</p>
-              <p className="text-gray-300">icdc@iem.edu.in</p>
+              <a 
+                href="mailto:icdc@iem.edu.in" 
+                className="text-gray-300 hover:text-white transition-colors block"
+              >
+                icdc@iem.edu.in
+              </a>
             </div>
           </div>
 
@@ -51,8 +56,8 @@ export const Footer = () => {
             <div className="space-y-2">
               <Link href="/papers" className="block text-gray-300 hover:text-white transition-colors">Call for Papers</Link>
               <Link href="/papers#guidelines" className="block text-gray-300 hover:text-white transition-colors">Submission Guidelines</Link>
-              <Link href="/papers#dates" className="block text-gray-300 hover:text-white transition-colors">Important Dates</Link>
-              <Link href="/papers#review" className="block text-gray-300 hover:text-white transition-colors">Review Process</Link>
+              {/* <Link href="/papers#dates" className="block text-gray-300 hover:text-white transition-colors">Important Dates</Link> */}
+              {/* <Link href="/papers#review" className="block text-gray-300 hover:text-white transition-colors">Review Process</Link> */}
             </div>
           </div>
 
@@ -61,9 +66,9 @@ export const Footer = () => {
             <h4 className="font-semibold text-lg">Registration</h4>
             <div className="space-y-2">
               <Link href="/registrations" className="block text-gray-300 hover:text-white transition-colors">Registration</Link>
-              <Link href="/registrations#pricing" className="block text-gray-300 hover:text-white transition-colors">Pricing</Link>
+              {/* <Link href="/registrations#pricing" className="block text-gray-300 hover:text-white transition-colors">Pricing</Link> */}
               <Link href="/venue" className="block text-gray-300 hover:text-white transition-colors">Venue Info</Link>
-              <Link href="/venue#travel" className="block text-gray-300 hover:text-white transition-colors">Travel Info</Link>
+              {/* <Link href="/venue#travel" className="block text-gray-300 hover:text-white transition-colors">Travel Info</Link> */}
             </div>
           </div>
 
@@ -71,14 +76,33 @@ export const Footer = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <h4 className="font-semibold text-lg">Support</h4>
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <span className="text-gray-300 text-sm">icdc@iem.edu.in</span>
+                  <a 
+                    href="mailto:icdc@iem.edu.in" 
+                    className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer"
+                  >
+                    icdc@iem.edu.in
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  <span className="text-gray-300 text-sm">+91 9674032480</span>
+                  <a 
+                    href="tel:+919674032480" 
+                    className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer"
+                  >
+                    +91 9674032480
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  <a 
+                    href="tel:+919674032480" 
+                    className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer"
+                  >
+                    +91 94334 95413
+                  </a>
                 </div>
               </div>
             </div>

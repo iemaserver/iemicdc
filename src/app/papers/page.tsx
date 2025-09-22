@@ -1,6 +1,29 @@
 import { Container } from "@/components/Container";
 import Link from "next/link";
 import { Bot, Shield, Cloud, Eye, Award, FileText, Calendar, Users } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Call for Papers - Paper Submission Guidelines",
+  description: "Submit your research papers to IEM ICDC 2026. Learn about submission guidelines, important dates, review process, and conference tracks in AI, Data Science, Cloud Computing, and more.",
+  keywords: [
+    "Call for Papers",
+    "Paper Submission",
+    "Research Papers",
+    "Conference Submission",
+    "AI Research",
+    "Data Science Papers",
+    "Cloud Computing Research",
+    "Academic Publishing",
+    "Peer Review",
+    "Conference Proceedings"
+  ],
+  openGraph: {
+    title: "Call for Papers - IEM ICDC 2026",
+    description: "Submit your research papers to IEM ICDC 2026. Learn about submission guidelines, important dates, and conference tracks.",
+    images: ["/images/S1.png"],
+  },
+};
 
 const getTrackIcon = (trackNumber: number) => {
   switch (trackNumber) {
@@ -14,8 +37,8 @@ const getTrackIcon = (trackNumber: number) => {
 
 const getTrackColor = (trackNumber: number) => {
   switch (trackNumber) {
-    case 1: return "from-blue-500 to-blue-600";
-    case 2: return "from-red-500 to-red-600";
+    case 1: return "from-red-500 to-red-600";
+    case 2: return "from-pink-500 to-pink-600";
     case 3: return "from-green-500 to-green-600";
     case 4: return "from-purple-500 to-purple-600";
     default: return "from-gray-500 to-gray-600";
@@ -60,14 +83,14 @@ const Track = ({
               className="group flex items-start space-x-3 p-4 bg-white rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-200"
             >
               <div className={`w-2 h-2 bg-gradient-to-r ${colorClass} rounded-full mt-2 group-hover:scale-125 transition-transform duration-200`}></div>
-              <span className="text-gray-700 group-hover:text-gray-800 text-sm leading-relaxed flex-1">
+              <span className="text-gray-700 group-hover:text-gray-800 text-md leading-relaxed flex-1">
                 {item}
               </span>
             </div>
           ))}
         </div>
         
-        <div className="mt-8 flex justify-between items-center">
+        {/* <div className="mt-8 flex justify-between items-center">
           <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
             {list.length} Research Areas
           </span>
@@ -77,7 +100,7 @@ const Track = ({
           >
             Submit to This Track
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -106,10 +129,10 @@ export default function Papers() {
             <p className="text-red-100">Outstanding papers will be recognized with prestigious awards</p>
           </div>
           
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
             <FileText className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">10 Pages Minimum</h3>
-            <p className="text-blue-100">Full papers preferred. No short papers accepted</p>
+            <h3 className="text-xl font-bold mb-2">10 Pages Preferably</h3>
+            <p className="text-red-100">Full papers preferred. No short papers accepted</p>
           </div>
           
           <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -120,12 +143,12 @@ export default function Papers() {
         </div>
 
         {/* Important Notice */}
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-3xl">
           <div className="bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl p-8 text-white text-center shadow-xl">
             <Calendar className="w-16 h-16 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-4">Submission Guidelines</h3>
             <div className="space-y-2 text-orange-100">
-              <p className="text-lg">📄 Papers should preferably be 10 pages minimum</p>
+              <p className="text-lg">📄 Papers should be atleast 10 pages</p>
               <p className="text-lg">🏆 Best paper awards will be provided</p>
               <p className="text-lg">❌ Short papers will not be accepted</p>
             </div>
@@ -248,7 +271,7 @@ export default function Papers() {
         </div>
 
         {/* Call to Action */}
-        <div className="w-full max-w-4xl">
+        {/* <div className="w-full max-w-4xl">
           <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl shadow-xl p-8 md:p-12 text-white text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Submit?</h3>
             <p className="text-red-100 mb-8 text-lg">
@@ -261,15 +284,9 @@ export default function Papers() {
               >
                 Submit Your Paper
               </Link>
-              <Link 
-                href="/schedule" 
-                className="bg-red-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-900 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                View Schedule
-              </Link>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </Container>
     </>

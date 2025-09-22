@@ -1,0 +1,43 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://iemicdc.org/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow crawling of admin or sensitive areas (none for this site)
+# Disallow: /admin/
+
+# Allow indexing of all public content
+Allow: /about
+Allow: /committee
+Allow: /awardees
+Allow: /papers
+Allow: /speakers
+Allow: /registrations
+Allow: /venue
+Allow: /images/
+
+# Block access to source files and development artifacts
+Disallow: /*.json$
+Disallow: /*.ts$
+Disallow: /*.tsx$
+Disallow: /*.js.map$
+Disallow: /src/
+Disallow: /.next/
+Disallow: /node_modules/
+
+# Additional directives for specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Host directive (when domain is finalized)
+# Host: https://iemicdc.org
