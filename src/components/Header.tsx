@@ -99,6 +99,8 @@ const Header = () => {
                 quality={100}
                 className="h-[8vh] lg:h-[13vh] sm:h-[7vh] w-auto max-w-[9rem] sm:max-w-[6rem] md:max-w-[10rem] lg:max-w-[10rem] xl:max-w-[14rem] object-contain"
               />
+            </Link>
+            <div className="flex flex-col items-center">
               <Image
                 src="/images/IEEE_kol_logo.png"
                 alt="IEEE Kolkata"
@@ -108,7 +110,10 @@ const Header = () => {
                 quality={100}
                 className="h-[5vh] sm:h-[3.5vh] md:h-[5vh] lg:h-[6vh] xl:h-[6.5vh] w-auto max-w-[5rem] sm:max-w-[6rem] md:max-w-[6.5rem] lg:max-w-[7rem] xl:max-w-[8rem] object-contain rounded-lg"
               />
-            </Link>
+              <span className="hidden lg:block text-xs lg:text-sm text-gray-600 font-medium text-center mt-1 whitespace-nowrap">
+                Technical Co-Sponsorship
+              </span>
+            </div>
 
             {/* IEM & UEM logos on small/medium */}
             <div className="flex lg:hidden items-center gap-1 sm:gap-1 pl-1 flex-shrink-0">

@@ -123,18 +123,6 @@ export default function Papers() {
         
         {/* Key Information Cards */}
         <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <Award className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">Best Paper Award</h3>
-            <p className="text-red-100">Outstanding papers will be recognized with prestigious awards</p>
-          </div>
-          
-          <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <FileText className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">10 Pages Preferably</h3>
-            <p className="text-red-100">Full papers preferred. No short papers accepted</p>
-          </div>
-          
           <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <FileText className="w-12 h-12 mx-auto mb-4" />
             <h3 className="text-xl font-bold mb-2">Submit Paper</h3>
@@ -148,6 +136,18 @@ export default function Papers() {
               Submit Now →
             </Link>
           </div>
+          
+          <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <Award className="w-12 h-12 mx-auto mb-4" />
+            <h3 className="text-xl font-bold mb-2">Best Paper Award</h3>
+            <p className="text-red-100">Outstanding papers will be recognized with prestigious awards</p>
+          </div>
+          
+          <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <FileText className="w-12 h-12 mx-auto mb-4" />
+            <h3 className="text-xl font-bold mb-2">10 Pages Preferably</h3>
+            <p className="text-red-100">Full papers preferred. No short papers accepted</p>
+          </div>          
         </div>
 
         {/* Important Notice */}
