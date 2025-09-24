@@ -135,10 +135,18 @@ export default function Papers() {
             <p className="text-red-100">Full papers preferred. No short papers accepted</p>
           </div>
           
-          <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <Users className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">Global Reach</h3>
-            <p className="text-green-100">International conference with worldwide participation</p>
+          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <FileText className="w-12 h-12 mx-auto mb-4" />
+            <h3 className="text-xl font-bold mb-2">Submit Paper</h3>
+            <p className="text-blue-100 mb-4">Submit your research paper via EasyChair</p>
+            <Link 
+              href="https://easychair.org/conferences?conf=iemicdc2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              Submit Now →
+            </Link>
           </div>
         </div>
 
