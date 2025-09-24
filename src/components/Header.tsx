@@ -88,7 +88,7 @@ const Header = () => {
       <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
         <div className="w-full max-w-screen-2xl mx-auto flex flex-wrap items-center justify-between lg:justify-around px-2 py-2 md:py-2 lg:flex-nowrap gap-y-2 min-w-0 overflow-visible relative">
           {/* Left Logos */}
-          <div className="flex items-center lg:gap-6 xl:gap-10 gap-1 sm:gap-0 lg:pr-2">
+          <div className="flex items-center lg:gap-6 xl:gap-10 gap-0 lg:pr-2">
             <Link href="/" className="flex items-center xl:gap-4 lg-gap-2">
               <Image
                 src="/images/logo-no-bg.png"
@@ -108,15 +108,15 @@ const Header = () => {
                 height={318}
                 priority
                 quality={100}
-                className="h-[5vh] sm:h-[3.5vh] md:h-[5vh] lg:h-[6vh] xl:h-[6.5vh] w-auto max-w-[5rem] sm:max-w-[6rem] md:max-w-[6.5rem] lg:max-w-[7rem] xl:max-w-[8rem] object-contain rounded-lg"
+                className="sm:h-[4vh] md:h-[5vh] lg:h-[6vh] xl:h-[6.5vh] h-[4.4vh] w-auto max-w-[5rem] sm:max-w-[4rem] md:max-w-[6.5rem] lg:max-w-[7rem] xl:max-w-[8rem] object-contain rounded-lg"
               />
-              <span className="hidden lg:block text-xs lg:text-sm text-gray-600 font-medium text-center mt-1 whitespace-nowrap">
+              <span className="hidden lg:block xl:block text-xs lg:text-sm text-gray-600 font-medium text-center mt-1 whitespace-nowrap">
                 Technical Co-Sponsorship
               </span>
             </div>
 
             {/* IEM & UEM logos on small/medium */}
-            <div className="flex lg:hidden items-center gap-1 sm:gap-1 pl-1 flex-shrink-0">
+            <div className="flex lg:hidden items-center gap-1 lg:gap-1 pl-1 flex-shrink-0">
               <>
                 <Image
                   src="/images/iem-logo.png"
@@ -125,7 +125,7 @@ const Header = () => {
                   height={1003}
                   quality={100}
                   priority
-                  className="h-[7vh] sm:h-[6vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
+                  className="h-[5.5vh] sm:h-[6vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
                 />
                 <Image
                   src="/images/uem-logo.png"
@@ -134,7 +134,7 @@ const Header = () => {
                   height={1003}
                   quality={100}
                   priority
-                  className="h-[7vh] sm:h-[6vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
+                  className="h-[5.5vh] sm:h-[6vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
                 />
               </>
             </div>
