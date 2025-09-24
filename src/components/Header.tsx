@@ -100,7 +100,7 @@ const Header = () => {
                 className="h-[8vh] lg:h-[13vh] sm:h-[7vh] w-auto max-w-[9rem] sm:max-w-[6rem] md:max-w-[10rem] lg:max-w-[10rem] xl:max-w-[14rem] object-contain"
               />
             </Link>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center mt-2">
               <Image
                 src="/images/IEEE_kol_logo.png"
                 alt="IEEE Kolkata"
