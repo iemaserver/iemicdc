@@ -27,7 +27,7 @@ const menuData: MenuItem[] = [
   },
   {
     id: 3,
-    title: "Tracks",
+    title: "Call For Papers",
     path: "/papers",
     newTab: false,
   },
@@ -97,7 +97,16 @@ const Header = () => {
                 height={1500}
                 priority
                 quality={100}
-                className="h-[11vh] lg:h-[13vh] w-auto max-w-[9rem] md:max-w-[10rem] lg:max-w-[10rem] xl:max-w-[14rem] object-contain"
+                className="h-[8vh] lg:h-[13vh] sm:h-[7vh] w-auto max-w-[9rem] sm:max-w-[6rem] md:max-w-[10rem] lg:max-w-[10rem] xl:max-w-[14rem] object-contain"
+              />
+              <Image
+                src="/images/IEEE_kol_logo.png"
+                alt="IEEE Kolkata"
+                width={812}
+                height={318}
+                priority
+                quality={100}
+                className="h-[5vh] sm:h-[3.5vh] md:h-[5vh] lg:h-[6vh] xl:h-[6.5vh] w-auto max-w-[5rem] sm:max-w-[6rem] md:max-w-[6.5rem] lg:max-w-[7rem] xl:max-w-[8rem] object-contain rounded-lg"
               />
             </Link>
 
@@ -111,7 +120,7 @@ const Header = () => {
                   height={1003}
                   quality={100}
                   priority
-                  className="h-[7vh] sm:h-[7vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
+                  className="h-[7vh] sm:h-[6vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
                 />
                 <Image
                   src="/images/uem-logo.png"
@@ -120,7 +129,7 @@ const Header = () => {
                   height={1003}
                   quality={100}
                   priority
-                  className="h-[7vh] sm:h-[7vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
+                  className="h-[7vh] sm:h-[6vh] md:h-[8vh] w-auto object-contain max-w-[5rem] sm:max-w-[5rem] md:max-w-[6rem]"
                 />
               </>
             </div>
