@@ -17,13 +17,23 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
           # See here for caching with `yarn`: https://github.com/actions/cache/blob/main/examples.md#node---yarn
           # Or you can leverage caching with `actions/setup-node`: https://github.com/actions/setup-node
           path: |
-            ~/.npm
             ${{ github.workspace }}/.next/cache
           # Generate a new cache whenever packages or source files change.
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
@@ -32,10 +42,10 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: Build project
-        run: npm run build
+        run: pnpm build
 
       - name: Enable Firebase experiments
         run: npx firebase-tools@latest experiments:enable webframeworks
