@@ -138,6 +138,10 @@ export const Footer = () => {
               <Link href="https://linkedin.com/in/debanurag" target="_blank" className="text-red-400 hover:text-red-300 transition-colors">
                 Anurag Deb
               </Link>
+              <span>and</span>
+              <Link href="http://linkedin.com/in/kartik-tulsian-682a6128a/" target="_blank" className="text-red-400 hover:text-red-300 transition-colors">
+                Kartik Tulsian
+              </Link>
             </div>
           </div>
         </div>
